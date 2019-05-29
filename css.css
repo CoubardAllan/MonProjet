@@ -1,0 +1,126 @@
+.my-carousel{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.divider{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 3px solid rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top{
+    width: 100%;
+    height: 100px;
+}
+body{
+    background-color: lightblue;
+}
+.card{
+    margin: 5px 0;
+    background-color: darkgrey;
+}
+
+.login-form {
+    width: 340px;
+    margin: 50px auto;
+}
+.login-form form {
+    margin-bottom: 15px;
+    background: black;
+    padding: 30px;
+}
+.sidebar {
+    position: relative;
+    float: right;
+}
+div.col-md-4{
+
+    float: right;
+    position: relative;
+    margin-top: 8%;
+}
+div.col-md-8{
+
+    float: left;
+    position: relative;
+    margin-top: 8%;
+    
+}
+img{
+    width: 61px;
+    height: 61px;
+}
+div.texte{
+    width: 70%;
+    float: right;
+    position: relative;
+}
+div.dernier-article{
+    width: 30%;
+    float: left;
+    position: relative;
+}
+div.texte-top-article{
+    width: 70%;
+    float: right;
+    position: relative;
+}
+div.image-top-article{
+    width: 30%;
+    float: left;
+    position: relative;
+}
+img.napoleon {
+    width: 70%;
+    height: 35%;
+    margin: 25px 0;
+
+}
+div.bouton-connexion{
+    margin: 25px 0;
+}
+div.row-login{
+    box-shadow: 2px 2px #0b0b0b;
+}
+.login-container{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.login-logo{
+    position: relative;
+    margin-left: -41.5%;
+}
+.login-logo img{
+    position: absolute;
+    width: 20%;
+    margin-top: 19%;
+    background: #282726;
+    border-radius: 4.5rem;
+    padding: 5%;
+}
+.connexion-form{
+    padding: 5%;
+    background:#282726;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    color:#fff;
+    margin-top: 5%;
+
+}
+.btnSubmit{
+    width: 70%;
+    color: #282726;
+    background-color: #fff;
+    border-radius: 1.5rem;
+    padding:2%;
+}
+a{
+    color: black;
+}
+h5 {
+    font-size: 18px;
+    font-family: "Times New Roman", Times, serif;
+    text-align: justify;
+}
