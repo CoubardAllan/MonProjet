@@ -47,15 +47,145 @@
                     Tantôt accusé d’être un « tyran colonialiste », sans pitié pour ses adversaires, tantôt jugé responsable de la mort de 2 millions de personnes, l’Empereur Napoléon se voit ainsi insulté par des gens qui, visiblement, n’ont pas cru bon d’ouvrir un livre d’histoire avant de réaliser leur vidéo.
                     Cette épisode de La Petite histoire est tout simplement une réponse à ces inepties grossières et pseudo-cool.
                 </p>
+                <div class="col-12">
+                    <img class="napoleon" src="/image/napoleon.jpg" alt="">
+                </div>
+
+                <p> Dans une vidéo récente, le site Topito.com dresse la liste des « 5 trucs cool inventés par des sales cons ».
+                    Dans cette liste on retrouve Hitler, Pétain, Saddam Hussein et… Napoléon !
+                    Tantôt accusé d’être un « tyran colonialiste », sans pitié pour ses adversaires, tantôt jugé responsable de la mort de 2 millions de personnes, l’Empereur Napoléon se voit ainsi insulté par des gens qui, visiblement, n’ont pas cru bon d’ouvrir un livre d’histoire avant de réaliser leur vidéo.
+                    Cette épisode de La Petite histoire est tout simplement une réponse à ces inepties grossières et pseudo-cool.
+                </p>
+
                 <div> <a href="https://www.tvlibertes.com/la-petite-histoire-napoleon-etait-il-un-sale-con-reponse-a-topito">lien vers la vidéo</a></div>
 
                 <div class="date">article publié le 28 mai</div>
+
+                <div class="col-12 divider"></div>
+
+                <div class="card"
+
+                <div class="col-12 divider"></div>
+
+                <h3 class="comment">Laisser un commentaire</h3>
+                <p class="comment-area">
+                    <label for="interieur"></label>
+                    <textarea id="interieur" name="interieur" cols="80" rows="8" maxlength="100000"></textarea>
+                </p>
+                <p class="submit">
+                    <input name="submit" type="submit" value="laisser un commentaire">
+                </p>
             </div>
         </div>
         <div class="col-md-3">
             <div class="row">
                 <div class="sidebar col-md-12 text-center">
                     <h3>les autres articles</h3>
+                </div>
+
+                <div class="col-12 divider"></div>
+
+                <div class="inner col-md-12">
+                    <div class="box-widget">
+                        <div class="dernier-article">
+                            <a href="" ><img alt="" src="/image/tele.jpg"></a>
+                        </div>
+                        <div class="texte">
+                            <h5>
+                                <a href=""> voici ici le dernier article publié sur le site</a>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 divider"></div>
+
+                <div class="inner col-md-12">
+                    <div class="box-widget">
+                        <div class="dernier-article">
+                            <a href="" ><img alt="" src="/image/tele.jpg"></a>
+                        </div>
+                        <div class="texte">
+                            <h5>
+                                <a href=""> voici ici le dernier article publié sur le site</a>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 divider"></div>
+
+                <div class="inner col-md-12">
+                    <div class="box-widget">
+                        <div class="dernier-article">
+                            <a href="" ><img alt="" src="/image/tele.jpg"></a>
+                        </div>
+                        <div class="texte">
+                            <h5>
+                                <a href=""> voici ici le dernier article publié sur le site</a>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 divider"></div>
+
+                <div class="inner col-md-12">
+                    <div class="box-widget">
+                        <div class="dernier-article">
+                            <a href="" ><img alt="" src="/image/tele.jpg"></a>
+                        </div>
+                        <div class="texte">
+                            <h5>
+                                <a href=""> voici ici le dernier article publié sur le site</a>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 divider"></div>
+
+                <div class="inner col-md-12">
+                    <div class="box-widget">
+                        <div class="dernier-article">
+                            <a href="" ><img alt="" src="/image/tele.jpg"></a>
+                        </div>
+                        <div class="texte">
+                            <h5>
+                                <a href=""> voici ici le dernier article publié sur le site</a>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 divider"></div>
+
+                <div class="inner col-md-12">
+                    <div class="box-widget">
+                        <div class="dernier-article">
+                            <a href="" ><img alt="" src="/image/tele.jpg"></a>
+                        </div>
+                        <div class="texte">
+                            <h5>
+                                <a href=""> voici ici le dernier article publié sur le site</a>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 divider"></div>
+
+                <div class="inner col-md-12">
+                    <div class="box-widget">
+                        <div class="dernier-article">
+                            <a href="" ><img alt="" src="/image/tele.jpg"></a>
+                        </div>
+                        <div class="texte">
+                            <h5>
+                                <a href=""> voici ici le dernier article publié sur le site</a>
+                            </h5>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="col-12 divider"></div>
