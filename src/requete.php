@@ -6,7 +6,7 @@ class requete{
     {
         $this->requete = new connexion();
     }
-    public function select(){
-
+    public function select($table){
+        $this->requete->getConnexion()->query('SELECT * FROM '.$table);
     }
 }
