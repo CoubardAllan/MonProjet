@@ -25,7 +25,7 @@
                 <a class="nav-link" href="/categorie/jeux.php">Jeux-vidéo</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/categorie/actualite.php">Actualité</a>
+                <a class="nav-link" href="/categorie/categorie.php">Actualité</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/connexion/login.php">Connexion</a>

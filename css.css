@@ -124,3 +124,12 @@ h5 {
     font-family: "Times New Roman", Times, serif;
     text-align: justify;
 }
+div.container-admin{
+    margin-top: 6%;
+}
+div.container-redac{
+    margin-top: 6%;
+}
+div.ban{
+    color: #c77700;
+}
