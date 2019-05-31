@@ -6,7 +6,7 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css.css">
+    <link rel="stylesheet" type="text/css" href="../css.css">
 </head>
 
 <body>
@@ -18,19 +18,19 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="categorie/histoire.php">Histoire <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="../categorie/histoire.php">Histoire <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="categorie/informatique.php">Informatique</a>
+                <a class="nav-link" href="../categorie/informatique.php">Informatique</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="categorie/jeux.php">Jeux-vidéo</a>
+                <a class="nav-link" href="../categorie/jeux.php">Jeux-vidéo</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="categorie/actualite.php">Actualité</a>
+                <a class="nav-link" href="../categorie/actualite.php">Actualité</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="connexion/login.php">Connexion</a>
+                <a class="nav-link" href="../connexion/login.php">Connexion</a>
             </li>
         </ul>
     </div>
@@ -44,13 +44,13 @@
 
                 <div id="carouselExampleControls" class="col-12 carousel slide carousel-fade my-carousel" data-ride="carousel">
                     <div class="carousel-item active ">
-                        <img class="d-block w-100" style="height: 250px" src="image/aurore.jpg" alt="premier slide ">
+                        <img class="d-block w-100" style="height: 250px" src="../image/aurore.jpg" alt="premier slide ">
                     </div>
                     <div class="carousel-item ">
-                        <img class="d-block w-100" style="height: 250px" src="image/chelou.jpg" alt="Second slide">
+                        <img class="d-block w-100" style="height: 250px" src="../image/chelou.jpg" alt="Second slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100"  style="height: 250px" src="image/chemin.jpg" alt="Third slide">
+                        <img class="d-block w-100" style="height: 250px" src="../image/chemin.jpg" alt="Third slide">
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -71,7 +71,7 @@
 
                 <div class="col-4">
                     <div class="card">
-                        <img class="card-img-top" src="image/chemin.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="../image/chemin.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Article 1</h5>
                             <p class="card-text">debut de l'article un</p>
@@ -81,7 +81,7 @@
                 </div>
                 <div class="col-4">
                     <div class="card">
-                        <img class="card-img-top" src="image/tele.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="../image/tele.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Article 2</h5>
                             <p class="card-text">debut de l'article 2.</p>
@@ -91,7 +91,7 @@
                 </div>
                 <div class="col-4">
                     <div class="card">
-                        <img class="card-img-top" src="image/plage.jpeg" alt="Card image cap">
+                        <img class="card-img-top" src="../image/plage.jpeg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Article 3</h5>
                             <p class="card-text">debut de l'article 3</p>
@@ -110,7 +110,7 @@
 
                 <div class="col-4">
                     <div class="card">
-                        <img class="card-img-top" src="image/nuit.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="../image/nuit.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Article 3</h5>
                             <p class="card-text">debut de l'article 3</p>
@@ -120,7 +120,7 @@
                 </div>
                 <div class="col-4">
                     <div class="card">
-                        <img class="card-img-top" src="image/nuit.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="../image/nuit.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Article 3</h5>
                             <p class="card-text">debut de l'article 3</p>
@@ -130,7 +130,7 @@
                 </div>
                 <div class="col-4">
                     <div class="card">
-                        <img class="card-img-top" src="image/nuit.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="../image/nuit.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Article 3</h5>
                             <p class="card-text">debut de l'article 3</p>
@@ -140,7 +140,7 @@
                 </div>
                 <div class="col-4">
                     <div class="card">
-                        <img class="card-img-top" src="image/nuit.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="../image/nuit.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Article 3</h5>
                             <p class="card-text">debut de l'article 3</p>
@@ -150,7 +150,7 @@
                 </div>
                 <div class="col-4">
                     <div class="card">
-                        <img class="card-img-top" src="image/nuit.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="../image/nuit.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Article 3</h5>
                             <p class="card-text">debut de l'article 3</p>
@@ -160,7 +160,7 @@
                 </div>
                 <div class="col-4">
                     <div class="card">
-                        <img class="card-img-top" src="image/nuit.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="../image/nuit.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Article 3</h5>
                             <p class="card-text">debut de l'article 3</p>
@@ -169,7 +169,7 @@
                     </div>
                 </div><div class="col-4">
                     <div class="card">
-                        <img class="card-img-top" src="image/nuit.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="../image/nuit.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Article 3</h5>
                             <p class="card-text">debut de l'article 3</p>
@@ -179,7 +179,7 @@
                 </div>
                 <div class="col-4">
                     <div class="card">
-                        <img class="card-img-top" src="image/nuit.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="../image/nuit.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Article 3</h5>
                             <p class="card-text">debut de l'article 3</p>
@@ -189,7 +189,7 @@
                 </div>
                 <div class="col-4">
                     <div class="card">
-                        <img class="card-img-top" src="image/nuit.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="../image/nuit.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Article 9</h5>
                             <p class="card-text">debut de l'article 9</p>

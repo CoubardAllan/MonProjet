@@ -22,7 +22,7 @@
                     <input type="submit" class="btnSubmit" value="connexion" />
                 </div>
                 <div class="col-md-12">
-                    <a href="../index.php">retour</a>
+                    <a href="../template/index.php">retour</a>
                 </div>
             </div>
         </div>

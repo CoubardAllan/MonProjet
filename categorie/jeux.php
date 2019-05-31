@@ -9,7 +9,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="../index.php">Menu</a>
+    <a class="navbar-brand" href="../template/index.php">Menu</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -69,13 +69,13 @@
                 <div class="image-top-article">
                     <div class="box-widget">
                         <h6 class="widget-title">
-                            <a href="../index.php" ><img alt="" src="../image/tele.jpg"></a>
+                            <a href="../template/index.php" ><img alt="" src="../image/tele.jpg"></a>
                         </h6>
                     </div>
                 </div>
                 <div class="texte-top-article">
                     <h5>
-                        <a href="../index.php">Voici ici l'article favorite des utilisateur de la catagorie jeux-video</a>
+                        <a href="../template/index.php">Voici ici l'article favorite des utilisateur de la catagorie jeux-video</a>
                     </h5>
                 </div>
 
@@ -84,13 +84,13 @@
                 <div class="image-top-article">
                     <div class="box-widget">
                         <h6 class="widget-title">
-                            <a href="../index.php" ><img alt="" src="../image/tele.jpg"></a>
+                            <a href="../template/index.php" ><img alt="" src="../image/tele.jpg"></a>
                         </h6>
                     </div>
                 </div>
                 <div class="texte-top-article">
                     <h5>
-                        <a href="../index.php">Voici ici l'article favorite des utilisateur de la catagorie jeux-video</a>
+                        <a href="../template/index.php">Voici ici l'article favorite des utilisateur de la catagorie jeux-video</a>
                     </h5>
                 </div>
 
