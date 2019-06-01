@@ -24,6 +24,12 @@
                 <div class="col-md-12">
                     <a href="../index.php">retour</a>
                 </div>
+                <div class="col-md-12">
+                    <a href="../admin.php">administrateur</a>
+                </div>
+                <div class="col-md-12">
+                    <a href="../redacteur.php">redacteur</a>
+                </div>
             </div>
         </div>
     </div>
