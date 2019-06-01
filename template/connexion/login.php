@@ -4,7 +4,7 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../css.css">
+    <link rel="stylesheet" type="text/css" href="../../css.css">
 
 </head>
 <body>
@@ -22,19 +22,19 @@
                     <input type="submit" class="btnSubmit" value="connexion" />
                 </div>
                 <div class="col-md-12">
-                    <a href="../template/index.php">retour</a>
+                    <a href="../index.php">retour</a>
                 </div>
                 <div class="col-md-12">
-                    <a href="../connexion/admin.php">administrateur</a>
+                    <a href="admin.php">administrateur</a>
                 </div>
                 <div class="col-md-12">
-                    <a href="../connexion/redacteur.php">redacteur</a>
+                    <a href="redacteur.php">redacteur</a>
                 </div>
                 <div class="col-md-12">
-                    <a href="../admin.php">administrateur</a>
+                    <a href="../../admin.php">administrateur</a>
                 </div>
                 <div class="col-md-12">
-                    <a href="../redacteur.php">redacteur</a>
+                    <a href="../../redacteur.php">redacteur</a>
                 </div>
             </div>
         </div>

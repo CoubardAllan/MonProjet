@@ -1,17 +1,19 @@
 <?php
-class connexion{
-    private $connexion;
-    public function __construct()
-    {
-        try{
-        $this->connexion = new PDO('mysql:host=localhost;dbname=mp1','root','');
-        }catch (PDOException $e){
-            echo '<br>'.$e->getMessage();
-        }
-    }
 
-    public function getConnexion()
+namespace App\requete;
+
+class connexion{
+    private static $connexion;
+    private function __construct()
     {
-        return $this->connexion;
+
+    }
+    public static function getConnexion(){
+            try{
+                self::$connexion = new \PDO('mysql:host=localhost;dbname=blog','root','');
+            }catch (\PDOException $e){
+                echo '<br>'.$e->getMessage();
+            }
+            return self::$connexion;
     }
 }

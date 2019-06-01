@@ -18,16 +18,16 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="categorie/histoire.php">Histoire <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="template/categorie/histoire.php">Histoire <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="categorie/informatique.php">Informatique</a>
+                <a class="nav-link" href="template/categorie/informatique.php">Informatique</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="categorie/jeux.php">Jeux-vidéo</a>
+                <a class="nav-link" href="template/categorie/jeux.php">Jeux-vidéo</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="categorie/index.php">Actualité</a>
+                <a class="nav-link" href="template/categorie/index.php">Actualité</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="connexion/login.php">Connexion</a>

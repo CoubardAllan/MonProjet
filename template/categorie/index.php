@@ -5,7 +5,7 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../css.css">
+    <link rel="stylesheet" type="text/css" href="../../css.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -45,7 +45,7 @@
                         <img class="d-block w-100" style="height: 400px" src="/image/chelou.jpg" alt="Second slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100"  style="height: 400px" src="/image/chemin.jpg" alt="Third slide">
+                        <img class="d-block w-100" style="height: 400px" src="/image/chemin.jpg" alt="Third slide">
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -69,7 +69,7 @@
                 <div class="image-top-article">
                     <div class="box-widget">
                         <h6 class="widget-title">
-                            <a href="../index.php" ><img alt="" src="../image/tele.jpg"></a>
+                            <a href="../index.php" ><img alt="" src="../../image/tele.jpg"></a>
                         </h6>
                     </div>
                 </div>
@@ -84,7 +84,7 @@
                 <div class="image-top-article">
                     <div class="box-widget">
                         <h6 class="widget-title">
-                            <a href="../index.php" ><img alt="" src="../image/tele.jpg"></a>
+                            <a href="../index.php" ><img alt="" src="../../image/tele.jpg"></a>
                         </h6>
                     </div>
                 </div>
@@ -105,7 +105,7 @@
 
                 <div class="col-6">
                     <div class="card">
-                        <img class="card-img-top" src="../image/nuit.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="../../image/nuit.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Article 3</h5>
                             <p class="card-text">debut de l'article 3</p>
@@ -115,7 +115,7 @@
                 </div>
                 <div class="col-6">
                     <div class="card">
-                        <img class="card-img-top" src="../image/nuit.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="../../image/nuit.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Article 3</h5>
                             <p class="card-text">debut de l'article 3</p>
@@ -125,7 +125,7 @@
                 </div>
                 <div class="col-6">
                     <div class="card">
-                        <img class="card-img-top" src="../image/nuit.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="../../image/nuit.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Article 3</h5>
                             <p class="card-text">debut de l'article 3</p>
@@ -135,7 +135,7 @@
                 </div>
                 <div class="col-6">
                     <div class="card">
-                        <img class="card-img-top" src="../image/nuit.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="../../image/nuit.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Article 3</h5>
                             <p class="card-text">debut de l'article 3</p>
@@ -145,7 +145,7 @@
                 </div>
                 <div class="col-6">
                     <div class="card">
-                        <img class="card-img-top" src="../image/nuit.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="../../image/nuit.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Article 3</h5>
                             <p class="card-text">debut de l'article 3</p>
@@ -155,7 +155,7 @@
                 </div>
                 <div class="col-6">
                     <div class="card">
-                        <img class="card-img-top" src="../image/nuit.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="../../image/nuit.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Article 3</h5>
                             <p class="card-text">debut de l'article 3</p>
@@ -165,7 +165,7 @@
                 </div>
                 <div class="col-6">
                     <div class="card">
-                        <img class="card-img-top" src="../image/nuit.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="../../image/nuit.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Article 3</h5>
                             <p class="card-text">debut de l'article 3</p>
@@ -175,7 +175,7 @@
                 </div>
                 <div class="col-6">
                     <div class="card">
-                        <img class="card-img-top" src="../image/nuit.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="../../image/nuit.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Article 3</h5>
                             <p class="card-text">debut de l'article 3</p>

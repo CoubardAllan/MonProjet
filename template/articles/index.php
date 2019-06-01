@@ -1,4 +1,7 @@
 <?php
+use App\requete\articlerepesitory;
+
+require '../../vendor/autoload.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,26 +12,26 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/index.php">Menu</a>
+    <a class="navbar-brand" href="./index.php">Menu</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="/categorie/index.php">Histoire <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/template/categorie/index.php">Histoire <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/categorie/index.php">Informatique</a>
+                <a class="nav-link" href="/template/categorie/index.php">Informatique</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/categorie/index.php">Jeux-vidéo</a>
+                <a class="nav-link" href="/template/categorie/index.php">Jeux-vidéo</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/categorie/index.php">Actualité</a>
+                <a class="nav-link" href="/template/categorie/index.php">Actualité</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/connexion/login.php">Connexion</a>
+                <a class="nav-link" href="../connexion/login.php">Connexion</a>
             </li>
         </ul>
     </div>
@@ -40,22 +43,16 @@
                 <div class="col-12">
                     <img class="napoleon" src="/image/napoleon.jpg" alt="">
                 </div>
-                <h1> Napoléon était-il un « sale con » ? </h1>
+                <?php
+                require_once '../../src/requete/articlerepesitory.php';
+                $contenu = new articlerepesitory(); ?>
 
-                <p> Dans une vidéo récente, le site Topito.com dresse la liste des « 5 trucs cool inventés par des sales cons ».
-                    Dans cette liste on retrouve Hitler, Pétain, Saddam Hussein et… Napoléon !
-                    Tantôt accusé d’être un « tyran colonialiste », sans pitié pour ses adversaires, tantôt jugé responsable de la mort de 2 millions de personnes, l’Empereur Napoléon se voit ainsi insulté par des gens qui, visiblement, n’ont pas cru bon d’ouvrir un livre d’histoire avant de réaliser leur vidéo.
-                    Cette épisode de La Petite histoire est tout simplement une réponse à ces inepties grossières et pseudo-cool.
-                </p>
-                <div class="col-12">
-                    <img class="napoleon" src="/image/napoleon.jpg" alt="">
-                </div>
+                    <p><?php $contenu->findBy(); ?></p>
+                <?php foreach ($contenu->findBy() as $contenu) : ?>
 
-                <p> Dans une vidéo récente, le site Topito.com dresse la liste des « 5 trucs cool inventés par des sales cons ».
-                    Dans cette liste on retrouve Hitler, Pétain, Saddam Hussein et… Napoléon !
-                    Tantôt accusé d’être un « tyran colonialiste », sans pitié pour ses adversaires, tantôt jugé responsable de la mort de 2 millions de personnes, l’Empereur Napoléon se voit ainsi insulté par des gens qui, visiblement, n’ont pas cru bon d’ouvrir un livre d’histoire avant de réaliser leur vidéo.
-                    Cette épisode de La Petite histoire est tout simplement une réponse à ces inepties grossières et pseudo-cool.
-                </p>
+                    <p class="text"><?php echo $contenu->contenu; ?></p>
+
+                <?php endforeach; ?>
 
                 <div> <a href="https://www.tvlibertes.com/la-petite-histoire-napoleon-etait-il-un-sale-con-reponse-a-topito">lien vers la vidéo</a></div>
 
