@@ -20,8 +20,19 @@ abstract class abstractrepository{
         $this->requete = new requete();
     }
 
-    public function findBy(){
-        return $this->requete->select('contenu')->from($this->table)->where(1)->execute();
+    public function findBy($params){
+        $options = '';
+        $compteur = 0;
+        foreach ($params as $key => $valeur){
+            if ($compteur <= 0){
+                $options = $options . ' ' . $key . ' = ' . $valeur;
+            }else{
+                $options = $options . ' and ' . $key . ' = ' . $valeur;
+            }
+            $compteur++;
+        }
+
+        return $this->requete->select('contenu')->from($this->table)->where($options)->execute();
     }
 
     /**
@@ -39,3 +50,7 @@ abstract class abstractrepository{
         $this->table = $table;
     }
 }
+
+//$articlesRepository->findBy(['id' => 2, 'top_article' => true]);
+//
+//where id = 2 and top_article = true;

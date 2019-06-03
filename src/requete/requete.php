@@ -46,8 +46,8 @@ class requete{
         return $this;
     }
 
-    public function where($id){
-        $this->requete = $this->requete . ' WHERE id = '. $id;
+    public function where($options){
+        $this->requete = $this->requete . ' WHERE ' . $options;
         return $this;
     }
 
@@ -56,4 +56,5 @@ class requete{
         $query->execute();
         return $query->fetchAll(\PDO::FETCH_CLASS);
     }
+
 }

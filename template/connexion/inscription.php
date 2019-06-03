@@ -1,4 +1,11 @@
 <?php
+use App\requete\connexion;
+
+if(!empty()){
+
+}
+
+
 ?>
 <html>
 <head>
@@ -13,28 +20,23 @@
         <div class="col-md-4 connexion-form mx-auto">
             <div class="row">
                 <div class="form-group col-md-12">
-                    <input type="text" class="form-control" placeholder="nom du compte" value="" />
+                    <input type="text" name="email" class="form-control" placeholder="email" />
                 </div>
                 <div class="form-group col-md-12 text-center">
-                    <input type="password" class="form-control" placeholder="mot de passe" value="" />
+                    <input type="password" name="password" class="form-control" placeholder="mot de passe" />
+                </div>
+                <div class="form-group col-md-12 text-center">
+                    <input type="password" name="cpassword" class="form-control" placeholder="confirmer votre mot de passe" />
                 </div>
                 <div class="checkbox">
                     <label><input type="checkbox">redacteur</label>
                 </div>
                 <div class="checkbox">
-                    <label><input type="checkbox">administrateur</label>
-                </div>
-                <div class="checkbox">
                     <label><input type="checkbox">utilisateur</label>
                 </div>
+
                 <div class="form-group col-md-12">
-                    <input type="submit" class="btnSubmit" value="connexion" />
-                </div>
-                <div class="col-md-12">
-                    <a href="inscription.php">pas de compte ?</a>
-                </div>
-                <div class="col-md-12">
-                    <a href="../index.php">retour</a>
+                    <input type="submit" class="btnSubmit" value="inscription" />
                 </div>
             </div>
         </div>

@@ -2,6 +2,8 @@
 use App\requete\articlerepesitory;
 
 require '../../vendor/autoload.php';
+require_once '../../src/requete/articlerepesitory.php';
+$repository = new articlerepesitory();
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,7 +14,7 @@ require '../../vendor/autoload.php';
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="./index.php">Menu</a>
+    <a class="navbar-brand" href="../index.php">Menu</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -43,17 +45,12 @@ require '../../vendor/autoload.php';
                 <div class="col-12">
                     <img class="napoleon" src="/image/napoleon.jpg" alt="">
                 </div>
-                <?php
-                require_once '../../src/requete/articlerepesitory.php';
-                $contenu = new articlerepesitory(); ?>
 
-                    <p><?php $contenu->findBy(); ?></p>
-                <?php foreach ($contenu->findBy() as $contenu) : ?>
+                <?php foreach ($repository->findBy( ['id' => 1 , 'is_top_article' => true ]) as $row) : ?>
 
-                    <p class="text"><?php echo $contenu->contenu; ?></p>
+                    <p class="text"><?php echo $row->contenu ?></p>
 
                 <?php endforeach; ?>
-
                 <div> <a href="https://www.tvlibertes.com/la-petite-histoire-napoleon-etait-il-un-sale-con-reponse-a-topito">lien vers la vidéo</a></div>
 
                 <div class="date">article publié le 28 mai</div>
