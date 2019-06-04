@@ -1,12 +1,17 @@
 <?php
 namespace App\requete;
+
 use App\requete\requete;
+
 abstract class abstractrepository{
+
     /**
      * @var requete
      */
     private $requete;
+
     private $table;
+
     /**
      * abstractrepository constructor.
      */
@@ -14,6 +19,7 @@ abstract class abstractrepository{
     {
         $this->requete = new requete();
     }
+
     public function findBy($params){
         $options = '';
         $compteur = 0;
@@ -25,14 +31,17 @@ abstract class abstractrepository{
             }
             $compteur++;
         }
+
         return $this->requete->select('contenu')->from($this->table)->where($options)->execute();
     }
+
     /**
      * return all Data
      */
     public function findAll(){
-        return $this->requete->select('*')->from($this->table)->execute();
+      return $this->requete->select('*')->from($this->table)->execute();
     }
+
     /**
      * @param mixed $table
      */
@@ -41,3 +50,7 @@ abstract class abstractrepository{
         $this->table = $table;
     }
 }
+
+//$articlesRepository->findBy(['id' => 2, 'top_article' => true]);
+//
+//where id = 2 and top_article = true;
