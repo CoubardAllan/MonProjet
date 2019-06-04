@@ -2,11 +2,7 @@
 require "../../vendor/autoload.php";
 use App\requete\articlerepesitory;
 require_once '../../src/requete/articlerepesitory.php';
-
-
 ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,45 +39,37 @@ require_once '../../src/requete/articlerepesitory.php';
     </div>
 </nav>
 
-<div class="container container-admin">
-    <div class="row">
-        <div class="col-12">
-            <table class="table table-bordered table-dark">
-                <thead>
-                <tr>
-                    <th scope="col">id</th>
-                    <th scope="col">nom</th>
-                    <th scope="col">prenom</th>
-                    <th scope="col">nom du compte</th>
-                    <th scope="col">role</th>
-                    <th scope="col"></th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php $admin = new articlerepesitory(); ?>
-                <?php foreach ($admin->findUtilisateur() as $row) : ?>
-                <tr>
-                    <th scope="row"><?php echo $row->id; ?></th>
-                    <td><?php echo $row->nom; ?></td>
-                    <td><?php echo $row->prenom; ?></td>
-                    <td><?php echo $row->nom_compte; ?></td>
-                    <td><?php echo $row->role; ?></td>
-                    <td><div class="ban"><i class="fas fa-ban"></i></div></td>
-                </tr>
+<?php
+use App\requete\requete;
+$test = new requete();
+$test->insertion($_POST);
 
-                 <?php endforeach; ?>
-                </tbody>
-            </table>
-            <form action="ajoutUtilisateur.php">
-                <div class="form-group col-md-12 text-right">
+?>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form method="post" action="">
+                <div class="form-group col-md-12 ">
+                    <input type="text" class="text" placeholder="nom" name="nom" />
+                </div>
+                <div class="form-group col-md-12 ">
+                    <input type="text" class="text" placeholder="prenom" name="prenom"/>
+                </div>
+                <div class="form-group col-md-12 ">
+                    <input type="text" class="text" placeholder="nom du compte" name="nom_compte"/>
+                </div>
+                <div class="form-group col-md-12 ">
+                    <input type="password" class="password" placeholder="mot de passe" name="mot_de_passe"/>
+                </div>
+                <div class="form-group col-md-12 ">
+                    <input type="text" class="text" placeholder="role" name="role" />
+                </div>
+                <div class="form-group col-md-12">
                     <input type="submit" class="btn btn-primary" value="ajouter un utilisateur" />
                 </div>
             </form>
         </div>
     </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

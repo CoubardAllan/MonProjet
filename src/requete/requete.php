@@ -31,6 +31,12 @@ class requete{
      * @var PDO ici c'est la fonction que j'appelle select qui me sert a faire des requetes en bdd
      */
 
+    public function insertion($data){
+        $this->requete = 'INSERT INTO utilisateur(nom, prenom, nom_compte, mot_de_passe, role) VALUES (?,?,?,?,?)';
+        $test2 = $this->connexion->prepare($this->requete);
+        $test2->execute([$data['nom'],$data['prenom'],$data['nom_compte'],$data['mot_de_passe'],$data['role']]);
+    }
+
     public function select($get){
         $this->requete =  'SELECT '.$get;
         return $this;

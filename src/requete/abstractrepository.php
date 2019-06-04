@@ -3,13 +3,14 @@ namespace App\requete;
 
 use App\requete\requete;
 
-abstract class abstractrepository{
+abstract class abstractrepository
+{
 
     /**
      * @var requete
      */
     private $requete;
-
+    private $test;
     private $table;
 
     /**
@@ -18,15 +19,17 @@ abstract class abstractrepository{
     public function __construct()
     {
         $this->requete = new requete();
+        $this->test = connexion::getConnexion();
     }
 
-    public function findBy($params){
+    public function findBy($params)
+    {
         $options = '';
         $compteur = 0;
-        foreach ($params as $key => $valeur){
-            if ($compteur <= 0){
+        foreach ($params as $key => $valeur) {
+            if ($compteur <= 0) {
                 $options = $options . ' ' . $key . ' = ' . $valeur;
-            }else{
+            } else {
                 $options = $options . ' and ' . $key . ' = ' . $valeur;
             }
             $compteur++;
@@ -38,14 +41,15 @@ abstract class abstractrepository{
     /**
      * return all Data
      */
-    public function findAll(){
-      return $this->requete->select('*')->from($this->table)->execute();
+    public function findAll()
+    {
+        return $this->requete->select('*')->from($this->table)->execute();
     }
 
-    public function findUtilisateur(){
+    public function findUtilisateur()
+    {
         return $this->requete->select('*')->from('utilisateur')->execute();
     }
-
     /**
      * @param mixed $table
      */
@@ -55,6 +59,3 @@ abstract class abstractrepository{
     }
 }
 
-//$articlesRepository->findBy(['id' => 2, 'top_article' => true]);
-//
-//where id = 2 and top_article = true;
