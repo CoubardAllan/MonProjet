@@ -43,7 +43,7 @@ $repository = new articlerepesitory();
         <div class="col-md-9">
             <div class="article-histoire">
                 <div class="col-12">
-                    <img class="napoleon" src="/image/napoleon.jpg" alt="">
+                    <img class="napoleon" src="/image/aurore.jpg" alt="">
                 </div>
 
                 <?php foreach ($repository->findBy( ['id' => 1 , 'is_top_article' => true ]) as $row) : ?>

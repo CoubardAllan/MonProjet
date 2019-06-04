@@ -42,6 +42,10 @@ abstract class abstractrepository{
       return $this->requete->select('*')->from($this->table)->execute();
     }
 
+    public function findUtilisateur(){
+        return $this->requete->select('*')->from('utilisateur')->execute();
+    }
+
     /**
      * @param mixed $table
      */

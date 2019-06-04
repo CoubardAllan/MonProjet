@@ -1,5 +1,11 @@
 <?php
+use App\requete\articlerepesitory;
+require_once '../../src/requete/articlerepesitory.php';
+require "../../vendor/autoload.php";
+
 ?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,39 +48,27 @@
             <table class="table table-bordered table-dark">
                 <thead>
                 <tr>
-                    <th scope="col">utilisateur</th>
+                    <th scope="col">id</th>
                     <th scope="col">nom</th>
                     <th scope="col">prenom</th>
-                    <th scope="col">login</th>
+                    <th scope="col">nom du compte</th>
                     <th scope="col">role</th>
                     <th scope="col"></th>
                 </tr>
                 </thead>
                 <tbody>
+                <?php $admin = new articlerepesitory(); ?>
+                <?php foreach ($admin->findUtilisateur() as $row) : ?>
                 <tr>
-                    <th scope="row">utilisateur1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>test</td>
-                    <td>redacteur</td>
+                    <th scope="row"><?php echo $row->id; ?></th>
+                    <td><?php echo $row->nom; ?></td>
+                    <td><?php echo $row->prenom; ?></td>
+                    <td><?php echo $row->nom_compte; ?></td>
+                    <td><?php echo $row->role; ?></td>
                     <td><div class="ban"><i class="fas fa-ban"></i></div></td>
                 </tr>
-                <tr>
-                    <th scope="row">utilisateur1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>test</td>
-                    <td>redacteur</td>
-                    <td><div class="ban"><i class="fas fa-ban"></i></div></td>
-                </tr>
-                <tr>
-                    <th scope="row">utilisateur1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>test</td>
-                    <td>redacteur</td>
-                    <td><div class="ban"><i class="fas fa-ban"></i></div></td>
-                </tr>
+
+                 <?php endforeach; ?>
                 </tbody>
             </table>
             <div class="form-group col-md-12 text-right">

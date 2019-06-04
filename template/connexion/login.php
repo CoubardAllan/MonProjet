@@ -36,6 +36,8 @@
                 <div class="col-md-12">
                     <a href="../index.php">retour</a>
                 </div>
+                <p><a href="admin.php">admin</a></p>
+                <a href="redacteur.php">redac</a>
             </div>
         </div>
     </div>

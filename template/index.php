@@ -94,7 +94,7 @@ require "../vendor/autoload.php";
                 </div>
                 <div class="col-4">
                     <div class="card">
-                        <img class="card-img-top" src="../image/plage.jpeg" alt="Card image cap">
+                        <img class="card-img-top" src="../image/plage.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Article 3</h5>
                             <p class="card-text">debut de l'article 3</p>
