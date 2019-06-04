@@ -30,12 +30,6 @@
                 <div class="col-md-12">
                     <a href="../connexion/redacteur.php">redacteur</a>
                 </div>
-                <div class="col-md-12">
-                    <a href="../admin.php">administrateur</a>
-                </div>
-                <div class="col-md-12">
-                    <a href="../redacteur.php">redacteur</a>
-                </div>
             </div>
         </div>
     </div>
