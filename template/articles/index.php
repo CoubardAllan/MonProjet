@@ -8,10 +8,8 @@ $repository = new articlerepesitory();
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/css.css">
-</head>
+    <?php require '../header.php'; ?>
+
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="../index.php">Menu</a>
@@ -38,6 +36,7 @@ $repository = new articlerepesitory();
         </ul>
     </div>
 </nav>
+
 <div class="container">
     <div class="row">
         <div class="col-md-9">

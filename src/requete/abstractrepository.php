@@ -57,5 +57,10 @@ abstract class abstractrepository
     {
         $this->table = $table;
     }
+    public function insertion($data){
+        $this->requete = 'INSERT INTO utilisateur(nom, prenom, nom_compte, mot_de_passe, role) VALUES (?,?,?,?,?)';
+        $test2 = $this->test->prepare($this->requete);
+        $test2->execute([$data['nom'],$data['prenom'],$data['nom_compte'],$data['mot_de_passe'],$data['role']]);
+    }
 }
 
