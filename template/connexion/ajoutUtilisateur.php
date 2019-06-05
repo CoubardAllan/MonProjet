@@ -42,7 +42,7 @@ require_once '../../src/requete/articlerepesitory.php';
 <?php
 use App\requete\requete;
 $test = new requete();
-$test->insertion($_POST);
+$test->insertion($_POST, utilisateur(nom, prenom, nom_compte, mot_de_passe, role));
 
 ?>
 <div class="container">
