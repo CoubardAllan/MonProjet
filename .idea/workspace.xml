@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="73a9218a-69e1-452a-9c0a-91509f254422" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/requete/utilisateur.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/connexion/ajoutUtilisateur.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compteur" beforeDir="false" afterPath="$PROJECT_DIR$/compteur" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/requete/abstractrepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/requete/abstractrepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/requete/articlerepesitory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/requete/articlerepesitory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/requete/requete.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/requete/requete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/connexion/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/template/connexion/admin.php" afterDir="false" />
-    </list>
+    <list default="true" id="73a9218a-69e1-452a-9c0a-91509f254422" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +124,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="625" />
     <option name="y" value="8" />
     <option name="width" value="744" />
@@ -268,7 +259,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21331316" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
