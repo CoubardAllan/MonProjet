@@ -2,18 +2,10 @@
 use App\requete\utilisateurrepository;
 
 require "../../vendor/autoload.php";
-?>
-<?php
 require '../header.php';
-$repository = new utilisateurrepository();
-if(!empty($_POST['nom_compte']) && !empty($_POST['mdp'])) {
-    if ($repository->findBy( ['id' => 1 , 'is_top_article' => true ]) ){
-        $login = new utilisateurrepository();
-        $login->identification();
-    }
-}else{
-    echo 'ok';
-}
+$login = new utilisateurrepository();
+$login->identification();
+
 ?>
 <!DOCTYPE html>
 <html>

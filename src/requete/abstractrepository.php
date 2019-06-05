@@ -10,7 +10,7 @@ abstract class abstractrepository
      * @var requete
      */
     private $requete;
-    private $test;
+    private $connexion;
     private $table;
 
     /**
@@ -19,7 +19,7 @@ abstract class abstractrepository
     public function __construct()
     {
         $this->requete = new requete();
-        $this->test = connexion::getConnexion();
+        $this->connexion = connexion::getConnexion();
     }
 
     public function findBy($params)
@@ -62,21 +62,9 @@ abstract class abstractrepository
     public function insertion($data)
     {
         $this->requete = 'INSERT INTO utilisateur(nom, prenom, nom_compte, mot_de_passe, role) VALUES (?,?,?,?,?)';
-        $test2 = $this->test->prepare($this->requete);
+        $test2 = $this->connexion->prepare($this->requete);
         $test2->execute([$data['nom'], $data['prenom'], $data['nom_compte'], $data['mot_de_passe'], $data['role']]);
     }
 
-    public function identification()
-    {
-        if (isset($_POST['nom_compte']) && isset($_POST['mdp'])) {
-            $query = "SELECT nom_compte, mot_de_passe FROM utilisateur WHERE nom_compte = ? AND mot_de_passe = ?";
-            $result = $this->test->prepare($query);
-            $result->execute([$_POST['nom_compte'], $_POST['mdp']]);
-            $user = $result->fetchAll();
-            header('location: ../index.php');
-        }else{
-            echo 'identifiants incorrect';
-        }
-    }
 }
 
