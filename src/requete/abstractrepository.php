@@ -50,6 +50,7 @@ abstract class abstractrepository
     {
         return $this->requete->select('*')->from('utilisateur')->execute();
     }
+
     /**
      * @param mixed $table
      */
@@ -57,10 +58,22 @@ abstract class abstractrepository
     {
         $this->table = $table;
     }
-    public function insertion($data){
+
+    public function insertion($data)
+    {
         $this->requete = 'INSERT INTO utilisateur(nom, prenom, nom_compte, mot_de_passe, role) VALUES (?,?,?,?,?)';
         $test2 = $this->test->prepare($this->requete);
-        $test2->execute([$data['nom'],$data['prenom'],$data['nom_compte'],$data['mot_de_passe'],$data['role']]);
+        $test2->execute([$data['nom'], $data['prenom'], $data['nom_compte'], $data['mot_de_passe'], $data['role']]);
+    }
+
+    public function identification()
+    {
+        // Si compte et mdp ne sont remplit
+        if (!empty($_POST['nom_compte']) && !empty($_POST['mdp'])) {
+            $query = "SELECT nom_compte, mot_de_passe, role FROM utilisateur WHERE nom_compte = ? AND mot_de_passe = ? AND role = ?";
+            $result = $this->test->prepare($query);
+            $result->execute([$_POST['nom_compte'], $_POST['mdp'], $_POST['role']]);
+            $user = $result->fetchAll();
+        }
     }
 }
-
