@@ -68,14 +68,15 @@ abstract class abstractrepository
 
     public function identification()
     {
-        // Si compte et mdp ne sont remplit
-        if (!isset($_POST['nom_compte']) && !isset($_POST['mdp']) && !isset($_POST['role'])) {
-            $query = "SELECT nom_compte, mot_de_passe, role FROM utilisateur WHERE nom_compte = ? AND mot_de_passe = ? AND role = ?";
+        if (isset($_POST['nom_compte']) && isset($_POST['mdp'])) {
+            $query = "SELECT nom_compte, mot_de_passe FROM utilisateur WHERE nom_compte = ? AND mot_de_passe = ?";
             $result = $this->test->prepare($query);
-            $result->execute([$_POST['nom_compte'], $_POST['mdp'], $_POST['role']]);
+            $result->execute([$_POST['nom_compte'], $_POST['mdp']]);
             $user = $result->fetchAll();
+            header('location: ../index.php');
         }else{
             echo 'identifiants incorrect';
         }
     }
 }
+

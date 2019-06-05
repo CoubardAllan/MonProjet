@@ -1,21 +1,18 @@
 <?php
-use App\requete\articlerepesitory;
+use App\requete\utilisateurrepository;
 
 require "../../vendor/autoload.php";
 ?>
 <?php
 require '../header.php';
-
-if(!empty($_POST['nom_compte']) && !empty($_POST['mdp']) && !empty($_POST['role'])) {
-    $login = new articlerepesitory();
-    $login->identification();
-    if ($_POST['role'] === 'administrateur'){
-        header('location: admin.php');
-    }elseif ($_POST['role'] === 'redacteur'){
-        header('location: redacteur.php');
-    }elseif ($_POST['role'] === 'visiteur' ){
-        header('location ../index.php');
+$repository = new utilisateurrepository();
+if(!empty($_POST['nom_compte']) && !empty($_POST['mdp'])) {
+    if ($repository->findBy( ['id' => 1 , 'is_top_article' => true ]) ){
+        $login = new utilisateurrepository();
+        $login->identification();
     }
+}else{
+    echo 'ok';
 }
 ?>
 <!DOCTYPE html>
@@ -31,9 +28,6 @@ if(!empty($_POST['nom_compte']) && !empty($_POST['mdp']) && !empty($_POST['role'
                     </div>
                     <div class="form-group col-md-12 text-center">
                         <input type="password" class="form-control" placeholder="mot de passe" name="mdp" />
-                    </div>
-                    <div class="form-group col-md-12 text-center">
-                        <input type="text" class="form-control" placeholder="role" name="role" />
                     </div>
                     <div class="form-group col-md-12">
                         <input type="submit" class="btnSubmit" value="connexion" />
