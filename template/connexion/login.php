@@ -1,7 +1,14 @@
 <?php
 ?>
 <html>
+<<<<<<< HEAD:template/connexion/login.php
 <?php require '../header.php'; ?>
+=======
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../../css.css">
+>>>>>>> c5cfdec46f1b0cac88a3bd5bb76c0298e4bf975d:template/connexion/login.php
 
 <body>
 <div class="container connexion-container">
@@ -25,6 +32,12 @@
                 </div>
                 <div class="form-group col-md-12">
                     <input type="submit" class="btnSubmit" value="connexion" />
+<<<<<<< HEAD:template/connexion/login.php
+=======
+                </div>
+                <div class="col-md-12">
+                    <a href="inscription.php">pas de compte ?</a>
+>>>>>>> c5cfdec46f1b0cac88a3bd5bb76c0298e4bf975d:template/connexion/login.php
                 </div>
                 <div class="col-md-12">
                     <a href="../index.php">retour</a>
