@@ -3,9 +3,10 @@ use App\requete\utilisateurrepository;
 
 require "../../vendor/autoload.php";
 require '../header.php';
-$login = new utilisateurrepository();
-$login->identification();
-
+if ($_POST) {
+    $login = new utilisateurrepository();
+    $login->identification();
+}
 ?>
 <!DOCTYPE html>
 <html>
