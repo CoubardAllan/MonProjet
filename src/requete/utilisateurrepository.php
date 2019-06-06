@@ -21,21 +21,25 @@ class utilisateurrepository
             $query = "SELECT nom_compte, mot_de_passe, role FROM utilisateur WHERE nom_compte = ? AND mot_de_passe = ?";
             $result = $this->connexion->prepare($query);
             $result->execute([$_POST['nom_compte'], $_POST['mdp']]);
-            $user = $result->fetchAll();
-            foreach ($user as $row => $clef) {
-                if ($clef[2] === 'administrateur') {
-                    $this->session->set('utilisateur', $user);
-                    header('Location: admin.php');
-                } elseif ($clef[2] === 'redacteur') {
-                    $this->session->set('utilisateur', $user);
-                    header('Location: redacteur.php');
-                } elseif ($clef[2] === 'visiteur') {
-                    $this->session->set('utilisateur', $user);
-                    header('Location: ../index.php');
-                }
+            $user = $result->fetchAll(\PDO::FETCH_COLUMN, 2);
+            $this->session->set('utilisateur', $user);
+            session_start();
+            if ($user[0] === 'administrateur'){
+                header('location: admin.php');
+            }elseif ($user[0] === 'redacteur'){
+                header('location: redacteur.php');
+            }elseif ($user[0] === 'visiteur'){
+                header('location: ../index.php');
             }
             return false;
         }
         return false;
+    }
+    public function deco(){
+        if ($this->session->existe('utilisateur')) {
+            unset($_SESSION['utilisateur']);
+            header('Location: login.php');
+            exit();
+        }
     }
 }

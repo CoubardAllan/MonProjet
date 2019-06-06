@@ -3,7 +3,7 @@
 namespace App\Session;
 
     class session
-{
+    {
     private static $session;
 
     private function __construct()

@@ -1,6 +1,5 @@
 <?php
 use App\requete\articlerepesitory;
-
 require "../vendor/autoload.php";
 ?>
 
@@ -29,9 +28,18 @@ require "../vendor/autoload.php";
             <li class="nav-item">
                 <a class="nav-link" href="categorie/categorie.php">Actualité</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../template/connexion/login.php">Connexion</a>
-            </li>
+            <?php
+            if (!isset($_SESSION['utilisateur'])) {
+                echo ' <li class="nav-item">';
+                echo  '<a class="nav-link" href="../template/connexion/login.php">connexion</a>';
+                echo '</li>';
+            } ?>
+            <?php
+            if (isset($_SESSION['utilisateur'])) {
+                echo ' <li class="nav-item">';
+                echo  '<a class="nav-link" href="../template/connexion/login.php">deconnexion</a>';
+                echo '</li>';
+            } ?>
         </ul>
     </div>
 </nav>
