@@ -23,13 +23,12 @@ class utilisateurrepository
             $result->execute([$_POST['nom_compte'], $_POST['mdp']]);
             $user = $result->fetchAll(\PDO::FETCH_COLUMN, 2);
             $this->session->set('utilisateur', $user);
-            session_start();
             if ($user[0] === 'administrateur'){
                 header('location: admin.php');
             }elseif ($user[0] === 'redacteur'){
                 header('location: redacteur.php');
-            }elseif ($user[0] === 'visiteur'){
-                header('location: ../index.php');
+            }else{
+                echo 'champ incorrect';
             }
             return false;
         }

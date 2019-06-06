@@ -11,6 +11,9 @@ $session = session::getSession();
 if($session->existe('utilisateur') === null){
     header('Location: login.php');
 }
+use App\authentification;
+$admin = new authentification();
+$admin->administrateur();
 ?>
 <!DOCTYPE html>
 <html>
@@ -42,11 +45,14 @@ if($session->existe('utilisateur') === null){
                 echo '</li>';
             } ?>
             <?php
+
             if (isset($_SESSION['utilisateur'])) {
                 echo ' <li class="nav-item">';
                 echo  '<a class="nav-link" href="login.php">deconnexion</a>';
                 echo '</li>';
-            } ?>
+            }
+
+            ?>
         </ul>
     </div>
 </nav>
