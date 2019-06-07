@@ -5,7 +5,14 @@ require "../vendor/autoload.php";
 
 <!DOCTYPE html>
 <html>
+<?php
+use App\Session\session;
 
+$session = session::getSession();
+if($session->existe('utilisateur') === true){
+    unset($_SESSION['utilisateur']);
+};
+?>
 <?php require 'header.php'; ?>
 
 <body>
@@ -16,6 +23,8 @@ require "../vendor/autoload.php";
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
+            <!-- Remplacer par une query qui va chercher toutes les categories en base de données -->
+            <!-- Les categories ne doivent pas etre visible par l'administateur -->
             <li class="nav-item active">
                 <a class="nav-link" href="categorie/index.php">Histoire <span class="sr-only">(current)</span></a>
             </li>
@@ -76,37 +85,22 @@ require "../vendor/autoload.php";
                 </div>
 
                 <div class="col-12 divider"></div>
-
-                <div class="col-4">
+                <?php
+                require_once '../src/requete/articlerepesitory.php';
+                $topArticle = new articlerepesitory();
+                ?>
+                <?php foreach ( array_slice($topArticle->findBy(['is_top_article' => 1], 'titre, contenu'),0 , 3 ) as $topArticle) : ?>
+                    <div class="col-4">
                     <div class="card">
                         <img class="card-img-top" src="../image/chemin.jpg" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title">Article 1</h5>
-                            <p class="card-text">debut de l'article un</p>
+                            <h5 class="card-title"><?php echo $topArticle->titre ?></h5>
+                            <p class="card-text"><?php echo substr($topArticle->contenu , 0, 50) ?></p>
                             <a  class="btn btn-primary">aller vers l'article</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
-                    <div class="card">
-                        <img class="card-img-top" src="../image/tele.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Article 2</h5>
-                            <p class="card-text">debut de l'article 2.</p>
-                            <a  class="btn btn-primary">aller vers l'article</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card">
-                        <img class="card-img-top" src="../image/plage.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Article 3</h5>
-                            <p class="card-text">debut de l'article 3</p>
-                            <a class="btn btn-primary">aller vers l'article</a>
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach; ?>
 
                 <div class="col-12 divider"></div>
 

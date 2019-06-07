@@ -1,16 +1,17 @@
 <?php
-require "../../vendor/autoload.php";
+namespace App\connexion;
 
+
+require "../../vendor/autoload.php";
+use App\requete\articlerepesitory;
+require_once '../../src/requete/articlerepesitory.php';
 ?>
+
 <!DOCTYPE html>
 <html>
-<?php
-require '../header.php';
-use App\authentification;
-$redacteur = new authentification();
-$redacteur->redacteur();
-?>
+<?php require '../header.php'; ?>
 <body>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="../index.php">Menu</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,63 +34,48 @@ $redacteur->redacteur();
             <?php
             if (!isset($_SESSION['utilisateur'])) {
                 echo ' <li class="nav-item">';
-                echo  '<a class="nav-link" href="login.php">connexion</a>';
+                echo  '<a class="nav-link" href="../connexion/login.php">connexion</a>';
                 echo '</li>';
             } ?>
             <?php
-
             if (isset($_SESSION['utilisateur'])) {
                 echo ' <li class="nav-item">';
-                echo  '<a class="nav-link" href="login.php">deconnexion</a>';
+                echo  '<a class="nav-link" href="../connexion/login.php">deconnexion</a>';
                 echo '</li>';
-            }
-
-            ?>
+            } ?>
         </ul>
     </div>
 </nav>
-
-<div class="container container-redac">
+<div class="container">
     <div class="row">
-        <div class="col-12">
-            <table class="table table-bordered table-dark">
-                <thead>
-                <tr>
-                    <th scope="col">titre</th>
-                    <th scope="col">date de publication</th>
-                    <th scope="col">categorie</th>
-                    <th scope="col">publié</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">Napoleon</th>
-                    <td>test</td>
-                    <td>test</td>
-                    <td>test</td>
-                </tr>
-                <tr>
-                    <th scope="row">test</th>
-                    <td>test</td>
-                    <td>test</td>
-                    <td>test</td>
-                </tr>
-                <tr>
-                    <th scope="row">test</th>
-                    <td>test</td>
-                    <td>test</td>
-                    <td>test</td>
-                </tr>
-                </tbody>
-            </table>
-            <form action="ajoutArticle.php">
-                <div class="form-group col-md-12 text-right">
+        <div class="col-md-12">
+            <form method="post" action="">
+                <div class="form-group col-md-12 ">
+                    <input type="text" class="text" placeholder="titre" name="titre" />
+                </div>
+                <div class="form-group col-md-12 ">
+                    <label for="contenu"></label>
+                    <textarea id="contenu" name="contenu" rows="15" cols="150"></textarea>
+                </div>
+                <div class="form-group col-md-12">
+                    <input type="text" class="text" name="categorie" >
+                </div>
+                <div class="form-group col-md-12">
                     <input type="submit" class="btn btn-primary" value="ajouter un article" />
                 </div>
             </form>
         </div>
     </div>
 </div>
-<?php require_once '../script.html'; ?>
+<?php
+
+if (!empty($_POST['titre']) && !empty($_POST['contenu'])){
+    $test = new articlerepesitory();
+    $test->ajoutArticle($_POST);
+}else{
+    echo 'champ nécessaire';
+}
+?>
+
 </body>
 </html>

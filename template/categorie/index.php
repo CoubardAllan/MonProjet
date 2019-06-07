@@ -28,9 +28,18 @@ require_once '../header.php'; ?>
             <li class="nav-item active">
                 <a class="nav-link" href="index.php">Actualité</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../connexion/login.php">Connexion</a>
-            </li>
+            <?php
+            if (!isset($_SESSION['utilisateur'])) {
+                echo ' <li class="nav-item">';
+                echo  '<a class="nav-link" href="../connexion/login.php">connexion</a>';
+                echo '</li>';
+            } ?>
+            <?php
+            if (isset($_SESSION['utilisateur'])) {
+                echo ' <li class="nav-item">';
+                echo  '<a class="nav-link" href="../connexion/login.php">deconnexion</a>';
+                echo '</li>';
+            } ?>
         </ul>
     </div>
 </nav>
@@ -66,7 +75,11 @@ require_once '../header.php'; ?>
                 </div>
 
                 <div class="col-12 divider"></div>
-
+                <?php
+                require_once '../../src/requete/articlerepesitory.php';
+                $toparticle = new articlerepesitory();
+                ?>
+                <?php foreach ( $toparticle->findBy(['is_top_article' => 1, 'category_id' => 4], 'titre, contenu, id') as $art) : ?>
                 <div class="image-top-article">
                     <div class="box-widget">
                         <h6 class="widget-title">
@@ -76,31 +89,20 @@ require_once '../header.php'; ?>
                 </div>
                 <div class="texte-top-article">
                     <h5>
-                        <a href="../index.php">Voici ici l'article favorite des utilisateur de la catagorie jeux-video</a>
+                        <a href="../index.php"><?php echo substr($art->contenu,0,75); ?></a>
                     </h5>
                 </div>
 
                 <div class="col-12 divider"></div>
 
-                <div class="image-top-article">
-                    <div class="box-widget">
-                        <h6 class="widget-title">
-                            <a href="../index.php" ><img alt="" src="../../image/tele.jpg"></a>
-                        </h6>
-                    </div>
-                </div>
-                <div class="texte-top-article">
-                    <h5>
-                        <a href="../index.php">Voici ici l'article favorite des utilisateur de la catagorie jeux-video</a>
-                    </h5>
-                </div>
+                <?php endforeach; ?>
 
             </div>
         </div>
         <div class="col-md-8">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h2><strong>Articles sur l'actu</strong></h2>
+                    <h2><strong>Articles sur l'actualité</strong></h2>
                 </div>
                  <?php
                     require_once '../../src/requete/articlerepesitory.php';
@@ -122,6 +124,5 @@ require_once '../header.php'; ?>
     </div>
 </div>
 <?php require_once '../script.html'; ?>
-
 </body>
 </html>

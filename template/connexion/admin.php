@@ -1,19 +1,18 @@
 <?php
 require "../../vendor/autoload.php";
 
+use App\authentification;
 use App\requete\articlerepesitory;
 
 require_once '../../src/requete/articlerepesitory.php';
 
 use App\Session\session;
 
-$session = session::getSession();
-if($session->existe('utilisateur') === null){
-    header('Location: login.php');
-}
-use App\authentification;
-$admin = new authentification();
-$admin->administrateur();
+
+    $admin = new authentification();
+    $admin->administrateur();
+
+
 ?>
 <!DOCTYPE html>
 <html>

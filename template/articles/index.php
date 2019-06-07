@@ -30,9 +30,18 @@ $repository = new articlerepesitory();
             <li class="nav-item">
                 <a class="nav-link" href="/template/categorie/index.php">Actualité</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../connexion/login.php">Connexion</a>
-            </li>
+            <?php
+            if (!isset($_SESSION['utilisateur'])) {
+                echo ' <li class="nav-item">';
+                echo  '<a class="nav-link" href="../connexion/login.php">connexion</a>';
+                echo '</li>';
+            } ?>
+            <?php
+            if (isset($_SESSION['utilisateur'])) {
+                echo ' <li class="nav-item">';
+                echo  '<a class="nav-link" href="../connexion/login.php">deconnexion</a>';
+                echo '</li>';
+            } ?>
         </ul>
     </div>
 </nav>

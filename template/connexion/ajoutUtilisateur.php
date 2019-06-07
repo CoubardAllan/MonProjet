@@ -17,38 +17,32 @@ require_once '../../src/requete/articlerepesitory.php';
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="../categorie/categorie.php">Histoire <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="../index.php">Histoire <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../categorie/categorie.php">Informatique</a>
+                <a class="nav-link" href="../index.php">Informatique</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../categorie/categorie.php">Jeux-vidéo</a>
+                <a class="nav-link" href="../index.php">Jeux-vidéo</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../categorie/categorie.php">Actualité</a>
+                <a class="nav-link" href="../index.php">Actualité</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="login.php">Connexion</a>
-            </li>
+            <?php
+            if (!isset($_SESSION['utilisateur'])) {
+                echo ' <li class="nav-item">';
+                echo  '<a class="nav-link" href="../connexion/login.php">connexion</a>';
+                echo '</li>';
+            } ?>
+            <?php
+            if (isset($_SESSION['utilisateur'])) {
+                echo ' <li class="nav-item">';
+                echo  '<a class="nav-link" href="../connexion/login.php">deconnexion</a>';
+                echo '</li>';
+            } ?>
         </ul>
     </div>
 </nav>
-<?php
-use App\requete\abstractrepository;
-if (!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['nom_compte']) && !empty($_POST['mot_de_passe']) && !empty($_POST['role'])){
-    $test = new articlerepesitory();
-    $test->insertion($_POST);
-}else{
-    echo 'champ nécessaire';
-}
-?>
-<?php
-use App\requete\requete;
-$test = new requete();
-$test->insertion($_POST);
-
-?>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -75,5 +69,15 @@ $test->insertion($_POST);
         </div>
     </div>
 </div>
+<?php
+use App\requete\utilisateurrepository;
+if (!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['nom_compte']) && !empty($_POST['mot_de_passe']) && !empty($_POST['role'])){
+    $test = new utilisateurrepository();
+    $test->insertion($_POST);
+}else{
+    echo 'champ nécessaire';
+}
+?>
+
 </body>
 </html>
