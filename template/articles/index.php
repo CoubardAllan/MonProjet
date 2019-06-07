@@ -44,8 +44,7 @@ $repository = new articlerepesitory();
                 <div class="col-12">
                     <img class="napoleon" src="/image/aurore.jpg" alt="">
                 </div>
-
-                <?php foreach ($repository->findBy( ['id' => 1 , 'is_top_article' => true ]) as $row) : ?>
+                <?php foreach ($repository->findBy( ['id' => 1 , 'is_top_article' => true ], 'contenu') as $row) : ?>
 
                     <p class="text"><?php echo $row->contenu ?></p>
 
