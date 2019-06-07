@@ -1,24 +1,23 @@
 <?php
 require "../../vendor/autoload.php";
+
 use App\requete\articlerepesitory;
+
 require_once '../../src/requete/articlerepesitory.php';
 
+use App\Session\session;
 
+$session = session::getSession();
+if($session->existe('utilisateur') === null){
+    header('Location: login.php');
+}
+use App\authentification;
+$admin = new authentification();
+$admin->administrateur();
 ?>
-
-
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD:template/connexion/admin.php
 <?php require '../header.php'; ?>
-=======
-<head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../../css.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
->>>>>>> c5cfdec46f1b0cac88a3bd5bb76c0298e4bf975d:template/connexion/admin.php
-
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="../index.php">Menu</a>
@@ -39,9 +38,21 @@ require_once '../../src/requete/articlerepesitory.php';
             <li class="nav-item">
                 <a class="nav-link" href="../categorie/categorie.php">Actualité</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="login.php">Connexion</a>
-            </li>
+            <?php
+            if (!isset($_SESSION['utilisateur'])) {
+            echo ' <li class="nav-item">';
+                echo  '<a class="nav-link" href="login.php">connexion</a>';
+                echo '</li>';
+            } ?>
+            <?php
+
+            if (isset($_SESSION['utilisateur'])) {
+                echo ' <li class="nav-item">';
+                echo  '<a class="nav-link" href="login.php">deconnexion</a>';
+                echo '</li>';
+            }
+
+            ?>
         </ul>
     </div>
 </nav>
