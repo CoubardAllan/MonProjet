@@ -1,15 +1,16 @@
 <?php
 ?>
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="admin.php">Utilisateur</a>
-            </li>
             <!-- Remplacer par une query qui va chercher toutes les categories en base de données -->
             <!-- Les categories ne doivent pas etre visible par l'administateur -->
+            <li class="nav-item">
+                <a class="nav-link" href="../categorie/index.php">Categories</a>
+            </li><li class="nav-item">
+                <a class="nav-link" href="redacteur.php">Articles</a>
+            </li>
             <?php
             if (!isset($_SESSION['utilisateur'])) {
                 echo ' <li class="nav-item">';
@@ -25,5 +26,3 @@
         </ul>
     </div>
 </nav>
-
-

@@ -1,7 +1,7 @@
 <?php
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Menu</a>
+    <a class="navbar-brand" href="admin.php">Utilisateur</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -12,13 +12,13 @@
             <?php
             if (!isset($_SESSION['utilisateur'])) {
                 echo ' <li class="nav-item">';
-                echo  '<a class="nav-link" href="../template/connexion/login.php">connexion</a>';
+                echo  '<a class="nav-link" href="../connexion/login.php">connexion</a>';
                 echo '</li>';
             } ?>
             <?php
             if (isset($_SESSION['utilisateur'])) {
                 echo ' <li class="nav-item">';
-                echo  '<a class="nav-link" href="../template/connexion/login.php">deconnexion</a>';
+                echo  '<a class="nav-link" href="../connexion/login.php">deconnexion</a>';
                 echo '</li>';
             } ?>
         </ul>
