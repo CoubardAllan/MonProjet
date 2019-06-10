@@ -54,7 +54,7 @@ if($session->existe('utilisateur') === true){
                 require_once '../src/requete/articlerepesitory.php';
                 $topArticle = new articlerepesitory();
                 ?>
-                <?php foreach ( array_slice($topArticle->findBy(['is_top_article' => 1], 'titre, contenu'),0 , 3 ) as $topArticle) : ?>
+                <?php foreach ( array_slice($topArticle->findBy(['is_top_article' => 1], 'titre, contenu', 'articles'),0 , 3 ) as $topArticle) : ?>
                     <div class="col-4">
                     <div class="card">
                         <img class="card-img-top" src="../image/chemin.jpg" alt="Card image cap">

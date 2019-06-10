@@ -22,9 +22,10 @@ abstract class abstractrepository
         $this->connexion = connexion::getConnexion();
     }
 
-    public function findBy($params, $opt)
+    public function findBy($params, $opt, $opt2)
     {
         $get = $opt;
+        $table = $opt2;
         $options = '';
         $compteur = 0;
         foreach ($params as $key => $valeur) {
@@ -36,7 +37,7 @@ abstract class abstractrepository
             $compteur++;
         }
 
-        return $this->requete->select($get)->from($this->table)->where($options)->execute();
+        return $this->requete->select($get)->from($table)->where($options)->execute();
     }
 
     /**
