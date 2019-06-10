@@ -18,43 +18,7 @@ use App\Session\session;
 <html>
 <?php require '../header.php'; ?>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="../index.php">Menu</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="../categorie/categorie.php">Histoire <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../categorie/categorie.php">Informatique</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../categorie/categorie.php">Jeux-vidéo</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../categorie/categorie.php">Actualité</a>
-            </li>
-            <?php
-            if (!isset($_SESSION['utilisateur'])) {
-            echo ' <li class="nav-item">';
-                echo  '<a class="nav-link" href="login.php">connexion</a>';
-                echo '</li>';
-            } ?>
-            <?php
-
-            if (isset($_SESSION['utilisateur'])) {
-                echo ' <li class="nav-item">';
-                echo  '<a class="nav-link" href="login.php">deconnexion</a>';
-                echo '</li>';
-            }
-
-            ?>
-        </ul>
-    </div>
-</nav>
+<?php require '../include/nav-admin.php'; ?>
 <div class="container container-admin">
     <div class="row">
         <div class="col-12">
