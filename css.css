@@ -136,3 +136,7 @@ div.ban{
 div.checkbox{
     margin: 0 2%;
 }
+div.card-body.card-text{
+    width: 100%;
+    text-align: justify;
+}

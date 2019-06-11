@@ -55,7 +55,7 @@ if($session->existe('utilisateur') === true){
                 $topArticle = new articlerepesitory();
                 ?>
                 <?php foreach ( array_slice($topArticle->findBy(['is_top_article' => 1], 'titre, contenu', 'articles'),0 , 3 ) as $topArticle) : ?>
-                    <div class="col-4">
+                    <div class="col-sm-4 d-flex pb-3">
                     <div class="card">
                         <img class="card-img-top" src="../image/chemin.jpg" alt="Card image cap">
                         <div class="card-body">
@@ -79,8 +79,8 @@ if($session->existe('utilisateur') === true){
                 $article = new articlerepesitory();
                 ?>
                 <?php foreach ( $article->findAll() as $article) : ?>
-                <div class="col-4">
-                    <div class="card">
+                <div class="col-sm-4 d-flex pb-3">
+                    <div class="card ">
                         <img class="card-img-top" src="../image/nuit.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $article->titre ?></h5>

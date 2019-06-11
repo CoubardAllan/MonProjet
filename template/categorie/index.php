@@ -79,7 +79,7 @@ require_once '../header.php'; ?>
                 require_once '../../src/requete/articlerepesitory.php';
                 $toparticle = new articlerepesitory();
                 ?>
-                <?php foreach ( $toparticle->findBy(['is_top_article' => 1, 'category_id' => 4], 'titre, contenu, id') as $art) : ?>
+                <?php foreach ( $toparticle->findBy(['is_top_article' => 1, 'category_id' => 4], 'titre, contenu, id','articles') as $art) : ?>
                 <div class="image-top-article">
                     <div class="box-widget">
                         <h6 class="widget-title">
@@ -108,7 +108,7 @@ require_once '../header.php'; ?>
                     require_once '../../src/requete/articlerepesitory.php';
                     $article = new articlerepesitory();
                     ?>
-                    <?php foreach ( $article->findBy(['category_id' => 4], 'titre, contenu, id') as $article) : ?>
+                    <?php foreach ( $article->findBy(['category_id' => 4],'*','articles') as $article) : ?>
                         <div class="col-6">
                             <div class="card">
                                 <img class="card-img-top" src="../../image/chelou.jpg" alt="Card image cap">

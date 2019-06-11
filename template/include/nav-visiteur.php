@@ -9,14 +9,16 @@
             <?php
             use App\requete\requete;
             $article = new requete();
-            $article->select('nom')->from('articles');
+
             ?>
             <!-- Remplacer par une query qui va chercher toutes les categories en base de données -->
             <!-- Les categories ne doivent pas etre visible par l'administateur -->
             <?php foreach ($article->select('nom')->from('categories')->execute() as $articles) : ?>
-            <li class="nav-item active">
+            <form method="get" action="categorie/index.php">
+            <li class="nav-item">
                 <a class="nav-link" href="categorie/index.php"><?php echo $articles->nom ?><span class="sr-only">(current)</span></a>
             </li>
+            </form>
             <?php endforeach; ?>
             <?php
             if (!isset($_SESSION['utilisateur'])) {
