@@ -11,11 +11,9 @@
             $categorie = new categoriesRepository();
             ?>
             <?php foreach ($categorie->findAll() as $categories) : ?>
-            <form method="get" action="">
             <li class="nav-item">
                 <a class="nav-link" href="categorie/index.php?id=<?php echo $categories->id ?>"><?php echo $categories->nom ?><span class="sr-only">(current)</span></a>
             </li>
-            </form>
             <?php endforeach; ?>
             <?php
             if (!isset($_SESSION['utilisateur'])) {

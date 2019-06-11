@@ -89,7 +89,7 @@ require_once '../header.php'; ?>
                 </div>
                 <div class="texte-top-article">
                     <h5>
-                        <a href="../index.php"><?php echo substr($art->contenu,0,75); ?></a>
+                        <a href="../articles/index.php  "><?php echo substr($art->contenu,0,75); ?></a>
                     </h5>
                 </div>
 
@@ -102,13 +102,13 @@ require_once '../header.php'; ?>
         <div class="col-md-8">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h2><strong>Articles sur {}</strong></h2>
+                    <h2><strong>Articles sur l'actualité</strong></h2>
                 </div>
                  <?php
                     require_once '../../src/requete/articlerepesitory.php';
                     $article = new articlerepesitory();
                     ?>
-                    <?php foreach ( $article->findBy(['category_id' => $_GET['id']],'*','articles') as $article) : ?>
+                    <?php foreach ( $article->findBy(['category_id' => 4],'*','articles') as $article) : ?>
                         <div class="col-6">
                             <div class="card">
                                 <img class="card-img-top" src="../../image/chelou.jpg" alt="Card image cap">

@@ -11,52 +11,23 @@ $repository = new articlerepesitory();
     <?php require '../header.php'; ?>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="../index.php">Menu</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="/template/categorie/index.php">Histoire <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/template/categorie/index.php">Informatique</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/template/categorie/index.php">Jeux-vidéo</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/template/categorie/index.php">Actualité</a>
-            </li>
-            <?php
-            if (!isset($_SESSION['utilisateur'])) {
-                echo ' <li class="nav-item">';
-                echo  '<a class="nav-link" href="../connexion/login.php">connexion</a>';
-                echo '</li>';
-            } ?>
-            <?php
-            if (isset($_SESSION['utilisateur'])) {
-                echo ' <li class="nav-item">';
-                echo  '<a class="nav-link" href="../connexion/login.php">deconnexion</a>';
-                echo '</li>';
-            } ?>
-        </ul>
-    </div>
-</nav>
-
+<?php
+require '../include/nav-redacteur.php';
+?>
 <div class="container">
     <div class="row">
         <div class="col-md-9">
             <div class="article-histoire">
-                <div class="col-12">
-                    <img class="napoleon" src="/image/aurore.jpg" alt="">
-                </div>
-                <?php foreach ($repository->findBy( ['id' => 1 , 'is_top_article' => true ], 'contenu', 'articles') as $row) : ?>
-
-                    <p class="text"><?php echo $row->contenu ?></p>
-
+                <?php foreach ($repository->findBy( ['id' => 1 , 'is_top_article' => true ], 'contenu, titre', 'articles') as $row) : ?>
+                    <div class="col-12 text-center titre-article">
+                        <p class="text"><strong><?php echo $row->titre ?></strong></p>
+                    </div>
+                    <div class="col-12">
+                        <img class="napoleon" src="/image/aurore.jpg" alt="">
+                    </div>
+                    <div class="col-12">
+                        <p class="text"><?php echo $row->contenu ?></p>
+                    </div>
                 <?php endforeach; ?>
                 <div> <a href="https://www.tvlibertes.com/la-petite-histoire-napoleon-etait-il-un-sale-con-reponse-a-topito">lien vers la vidéo</a></div>
 
@@ -81,145 +52,27 @@ $repository = new articlerepesitory();
         <div class="col-md-3">
             <div class="row">
                 <div class="sidebar col-md-12 text-center">
-                    <h3>les autres articles</h3>
+                    <h3>Articles</h3>
                 </div>
 
                 <div class="col-12 divider"></div>
-
-                <div class="inner col-md-12">
-                    <div class="box-widget">
-                        <div class="dernier-article">
-                            <a href="" ><img alt="" src="/image/tele.jpg"></a>
-                        </div>
-                        <div class="texte">
-                            <h5>
-                                <a href=""> voici ici le dernier article publié sur le site</a>
-                            </h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 divider"></div>
-
-                <div class="inner col-md-12">
-                    <div class="box-widget">
-                        <div class="dernier-article">
-                            <a href="" ><img alt="" src="/image/tele.jpg"></a>
-                        </div>
-                        <div class="texte">
-                            <h5>
-                                <a href=""> voici ici le dernier article publié sur le site</a>
-                            </h5>
+                <?php $LeftArticle = new articlerepesitory(); ?>
+                <?php foreach (array_slice($LeftArticle->findAll(),0,10) as $row) : ?>
+                    <div class="inner col-md-12">
+                        <div class="box-widget">
+                            <div class="dernier-article">
+                                <a href="" ><img alt="" src="/image/tele.jpg"></a>
+                            </div>
+                            <div class="texte">
+                                <h5>
+                                    <a href="../articles/index.php?id=<?php echo $row->id; ?>"><?php echo substr($row->titre,0,45) ; ?></a>
+                                </h5>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-12 divider"></div>
-
-                <div class="inner col-md-12">
-                    <div class="box-widget">
-                        <div class="dernier-article">
-                            <a href="" ><img alt="" src="/image/tele.jpg"></a>
-                        </div>
-                        <div class="texte">
-                            <h5>
-                                <a href=""> voici ici le dernier article publié sur le site</a>
-                            </h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 divider"></div>
-
-                <div class="inner col-md-12">
-                    <div class="box-widget">
-                        <div class="dernier-article">
-                            <a href="" ><img alt="" src="/image/tele.jpg"></a>
-                        </div>
-                        <div class="texte">
-                            <h5>
-                                <a href=""> voici ici le dernier article publié sur le site</a>
-                            </h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 divider"></div>
-
-                <div class="inner col-md-12">
-                    <div class="box-widget">
-                        <div class="dernier-article">
-                            <a href="" ><img alt="" src="/image/tele.jpg"></a>
-                        </div>
-                        <div class="texte">
-                            <h5>
-                                <a href=""> voici ici le dernier article publié sur le site</a>
-                            </h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 divider"></div>
-
-                <div class="inner col-md-12">
-                    <div class="box-widget">
-                        <div class="dernier-article">
-                            <a href="" ><img alt="" src="/image/tele.jpg"></a>
-                        </div>
-                        <div class="texte">
-                            <h5>
-                                <a href=""> voici ici le dernier article publié sur le site</a>
-                            </h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 divider"></div>
-
-                <div class="inner col-md-12">
-                    <div class="box-widget">
-                        <div class="dernier-article">
-                            <a href="" ><img alt="" src="/image/tele.jpg"></a>
-                        </div>
-                        <div class="texte">
-                            <h5>
-                                <a href=""> voici ici le dernier article publié sur le site</a>
-                            </h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 divider"></div>
-
-                <div class="inner col-md-12">
-                    <div class="box-widget">
-                        <div class="dernier-article">
-                            <a href="" ><img alt="" src="/image/tele.jpg"></a>
-                        </div>
-                        <div class="texte">
-                            <h5>
-                                <a href=""> voici ici le dernier article publié sur le site</a>
-                            </h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 divider"></div>
-
-                <div class="inner col-md-12">
-                    <div class="box-widget">
-                        <div class="dernier-article">
-                            <a href="" ><img alt="" src="/image/tele.jpg"></a>
-                        </div>
-                        <div class="texte">
-                            <h5>
-                                <a href=""> voici ici le dernier article publié sur le site</a>
-                            </h5>
-                        </div>
-                    </div>
-                </div>
-
-
+                    <div class="col-12 divider"></div>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>
