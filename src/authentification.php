@@ -16,26 +16,27 @@ class authentification{
     }
 
     public function administrateur(){
-        if ($_SESSION['utilisateur']){
+        if (isset($_SESSION['utilisateur'])){
             foreach ($_SESSION['utilisateur'] as $row => $clef){
                 if ($clef === 'administrateur'){
-                    echo 'vous etes un admin';
-                }else{
-                    header('location: ../index.php');
+                    echo '';
                 }
             }
+        }
+        else{
+            header('location: ../index.php');
         }
     }
 
     public function redacteur(){
-        if ($_SESSION['utilisateur']){
-            foreach ($_SESSION['utilisateur'] as $row => $clef){
-                if ($clef === 'redacteur'){
-                    echo 'vous etes un redacteur';
-                }else{
-                    header('location: ../index.php');
-                }
-            }
+         // Si il n'y à pas d'utilisateur en session ou que l'utilisateur n'est pas a redacteur alors je redirige
+        if (!$_SESSION['utilisateur'] || $_SESSION['utilisateur']['role'] !== 'redacteur'){
+            header('location: ../index.php');
         }
+    }
+
+    public function isLogged()
+    {
+
     }
 }

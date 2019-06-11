@@ -22,8 +22,10 @@ abstract class abstractrepository
         $this->connexion = connexion::getConnexion();
     }
 
-    public function findBy($params)
+    public function findBy($params, $opt, $opt2)
     {
+        $get = $opt;
+        $table = $opt2;
         $options = '';
         $compteur = 0;
         foreach ($params as $key => $valeur) {
@@ -35,7 +37,7 @@ abstract class abstractrepository
             $compteur++;
         }
 
-        return $this->requete->select('contenu')->from($this->table)->where($options)->execute();
+        return $this->requete->select($get)->from($table)->where($options)->execute();
     }
 
     /**
@@ -59,10 +61,5 @@ abstract class abstractrepository
         $this->table = $table;
     }
 
-    public function insertion($data){
-        $this->requete = 'INSERT INTO utilisateur(nom, prenom, nom_compte, mot_de_passe, role) VALUES (?,?,?,?,?)';
-        $test2 = $this->connexion->prepare($this->requete);
-        $test2->execute([$data['nom'], $data['prenom'], $data['nom_compte'], $data['mot_de_passe'], $data['role']]);
-    }
 }
 

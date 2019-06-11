@@ -30,9 +30,18 @@ $repository = new articlerepesitory();
             <li class="nav-item">
                 <a class="nav-link" href="/template/categorie/index.php">Actualité</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../connexion/login.php">Connexion</a>
-            </li>
+            <?php
+            if (!isset($_SESSION['utilisateur'])) {
+                echo ' <li class="nav-item">';
+                echo  '<a class="nav-link" href="../connexion/login.php">connexion</a>';
+                echo '</li>';
+            } ?>
+            <?php
+            if (isset($_SESSION['utilisateur'])) {
+                echo ' <li class="nav-item">';
+                echo  '<a class="nav-link" href="../connexion/login.php">deconnexion</a>';
+                echo '</li>';
+            } ?>
         </ul>
     </div>
 </nav>
@@ -44,8 +53,7 @@ $repository = new articlerepesitory();
                 <div class="col-12">
                     <img class="napoleon" src="/image/aurore.jpg" alt="">
                 </div>
-
-                <?php foreach ($repository->findBy( ['id' => 1 , 'is_top_article' => true ]) as $row) : ?>
+                <?php foreach ($repository->findBy( ['id' => 1 , 'is_top_article' => true ], 'contenu') as $row) : ?>
 
                     <p class="text"><?php echo $row->contenu ?></p>
 
