@@ -9,16 +9,15 @@ $repository = new articlerepesitory();
 <html>
 <head>
     <?php require '../header.php'; ?>
-
 <body>
 <?php
-require '../include/nav-redacteur.php';
+require '../include/nav-visiteur.php';
 ?>
 <div class="container">
     <div class="row">
         <div class="col-md-9">
             <div class="article-histoire">
-                <?php foreach ($repository->findBy( ['id' => 1 , 'is_top_article' => true ], 'contenu, titre', 'articles') as $row) : ?>
+                <?php foreach ($repository->findBy( ['id' => $_GET['id']], 'contenu, titre', 'articles') as $row) : ?>
                     <div class="col-12 text-center titre-article">
                         <p class="text"><strong><?php echo $row->titre ?></strong></p>
                     </div>
@@ -29,7 +28,9 @@ require '../include/nav-redacteur.php';
                         <p class="text"><?php echo $row->contenu ?></p>
                     </div>
                 <?php endforeach; ?>
-                <div> <a href="https://www.tvlibertes.com/la-petite-histoire-napoleon-etait-il-un-sale-con-reponse-a-topito">lien vers la vidéo</a></div>
+                <div>
+                    <a href="https://www.tvlibertes.com/la-petite-histoire-napoleon-etait-il-un-sale-con-reponse-a-topito">lien vers la vidéo</a>
+                </div>
 
                 <div class="date">article publié le 28 mai</div>
 
@@ -56,8 +57,7 @@ require '../include/nav-redacteur.php';
                 </div>
 
                 <div class="col-12 divider"></div>
-                <?php $LeftArticle = new articlerepesitory(); ?>
-                <?php foreach (array_slice($LeftArticle->findAll(),0,10) as $row) : ?>
+                <?php foreach (array_slice($repository->findAll(),0,10) as $row) : ?>
                     <div class="inner col-md-12">
                         <div class="box-widget">
                             <div class="dernier-article">

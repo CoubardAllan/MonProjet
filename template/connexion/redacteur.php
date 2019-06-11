@@ -51,6 +51,11 @@ $redacteur->redacteur();
                     <input type="submit" class="btn btn-primary" value="ajouter un article" />
                 </div>
             </form>
+            <form action="ajoutCategorie.php">
+                <div class="form-group col-md-12 text-right">
+                    <input type="submit" class="btn btn-primary" value="ajouter une categorie" />
+                </div>
+            </form>
         </div>
     </div>
 </div>

@@ -1,48 +1,17 @@
 <?php
 require '../../vendor/autoload.php';
+use App\requete\articlerepesitory;
+require_once '../../src/requete/articlerepesitory.php';
+$articleRepository = new articlerepesitory();
+$categorieRepository = new \App\requete\categoriesRepository();
+$categorie = $categorieRepository->findBy(['id' => $_GET['id']], '*', 'categories');
+dump($categorie[0]->nom);
 ?>
 <!DOCTYPE html>
 <html>
-<?php
-
-use App\requete\articlerepesitory;
-
-require_once '../header.php'; ?>
+    <?php require_once '../header.php'; ?>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="../index.php">Menu</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="index.php">Histoire <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="index.php">Informatique</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="index.php">Jeux-vidéo</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="index.php">Actualité</a>
-            </li>
-            <?php
-            if (!isset($_SESSION['utilisateur'])) {
-                echo ' <li class="nav-item">';
-                echo  '<a class="nav-link" href="../connexion/login.php">connexion</a>';
-                echo '</li>';
-            } ?>
-            <?php
-            if (isset($_SESSION['utilisateur'])) {
-                echo ' <li class="nav-item">';
-                echo  '<a class="nav-link" href="../connexion/login.php">deconnexion</a>';
-                echo '</li>';
-            } ?>
-        </ul>
-    </div>
-</nav>
+<?php require '../include/nav-visiteur.php'; ?>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -75,40 +44,29 @@ require_once '../header.php'; ?>
                 </div>
 
                 <div class="col-12 divider"></div>
-                <?php
-                require_once '../../src/requete/articlerepesitory.php';
-                $toparticle = new articlerepesitory();
-                ?>
-                <?php foreach ( $toparticle->findBy(['is_top_article' => 1, 'category_id' => 4], 'titre, contenu, id','articles') as $art) : ?>
-                <div class="image-top-article">
-                    <div class="box-widget">
-                        <h6 class="widget-title">
-                            <a href="../index.php" ><img alt="" src="../../image/tele.jpg"></a>
-                        </h6>
+                <?php foreach ( $articleRepository->findBy(['is_top_article' => 1], 'titre, contenu, id','articles') as $art) : ?>
+                    <div class="image-top-article">
+                        <div class="box-widget">
+                            <h6 class="widget-title">
+                                <a href="../index.php" ><img alt="" src="../../image/tele.jpg"></a>
+                            </h6>
+                        </div>
                     </div>
-                </div>
-                <div class="texte-top-article">
-                    <h5>
-                        <a href="../articles/index.php  "><?php echo substr($art->contenu,0,75); ?></a>
-                    </h5>
-                </div>
-
-                <div class="col-12 divider"></div>
-
+                    <div class="texte-top-article">
+                        <h5>
+                            <a href="../articles/index.php  "><?php echo substr($art->contenu,0,75); ?></a>
+                        </h5>
+                    </div>
+                    <div class="col-12 divider"></div>
                 <?php endforeach; ?>
-
             </div>
         </div>
         <div class="col-md-8">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h2><strong>Articles sur l'actualité</strong></h2>
+                    <h2><strong>Articles sur l'<?php echo $categorie[0]->nom ?></strong></h2>
                 </div>
-                 <?php
-                    require_once '../../src/requete/articlerepesitory.php';
-                    $article = new articlerepesitory();
-                    ?>
-                    <?php foreach ( $article->findBy(['category_id' => 4],'*','articles') as $article) : ?>
+                    <?php foreach ( $articleRepository->findBy(['category_id' => $_GET['id']],'*','articles') as $article) : ?>
                         <div class="col-6">
                             <div class="card">
                                 <img class="card-img-top" src="../../image/chelou.jpg" alt="Card image cap">
