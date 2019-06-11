@@ -7,16 +7,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <?php
-            use App\requete\requete;
-            $article = new requete();
-
+            use App\requete\categoriesRepository;
+            $categorie = new categoriesRepository();
             ?>
-            <!-- Remplacer par une query qui va chercher toutes les categories en base de données -->
-            <!-- Les categories ne doivent pas etre visible par l'administateur -->
-            <?php foreach ($article->select('nom')->from('categories')->execute() as $articles) : ?>
-            <form method="get" action="categorie/index.php">
+            <?php foreach ($categorie->findAll() as $categories) : ?>
+            <form method="get" action="">
             <li class="nav-item">
-                <a class="nav-link" href="categorie/index.php"><?php echo $articles->nom ?><span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="categorie/index.php?id=<?php echo $categories->id ?>"><?php echo $categories->nom ?><span class="sr-only">(current)</span></a>
             </li>
             </form>
             <?php endforeach; ?>
