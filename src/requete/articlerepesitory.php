@@ -13,8 +13,9 @@ class articlerepesitory extends abstractrepository{
     }
 
     public function ajoutArticle($data){
-        $this->requete = 'INSERT INTO articles(titre , contenu , category_id) VALUES (?,?,?)';
+        $test = $_POST['categorie'];
+        $this->requete = 'INSERT INTO articles(titre , contenu , date_publication , category_id ) VALUES (?,?,?,?)';
         $ajout = $this->connexion->prepare($this->requete);
-        $ajout->execute([$data['titre'], $data['contenu'], $data['categorie']]);
+        $ajout->execute([$data['titre'], $data['contenu'], $data['date_publication'], $data['categorie']]);
     }
 }

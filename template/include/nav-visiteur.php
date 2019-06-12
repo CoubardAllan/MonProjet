@@ -7,27 +7,24 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <?php
-            use App\requete\requete;
-            $article = new requete();
-            $article->select('nom')->from('articles');
+            use App\requete\categoriesRepository;
+            $categorie = new categoriesRepository();
             ?>
-            <!-- Remplacer par une query qui va chercher toutes les categories en base de données -->
-            <!-- Les categories ne doivent pas etre visible par l'administateur -->
-            <?php foreach ($article->select('nom')->from('categories')->execute() as $articles) : ?>
-            <li class="nav-item active">
-                <a class="nav-link" href="categorie/index.php"><?php echo $articles->nom ?><span class="sr-only">(current)</span></a>
+            <?php foreach ($categorie->findAll() as $categories) : ?>
+            <li class="nav-item">
+                <a class="nav-link" href="../categorie/index.php?id=<?php echo $categories->id ?>"><?php echo $categories->nom ?><span class="sr-only">(current)</span></a>
             </li>
             <?php endforeach; ?>
             <?php
             if (!isset($_SESSION['utilisateur'])) {
                 echo ' <li class="nav-item">';
-                echo  '<a class="nav-link" href="../template/connexion/login.php">connexion</a>';
+                echo  '<a class="nav-link" href="../connexion/login.php">connexion</a>';
                 echo '</li>';
             } ?>
             <?php
             if (isset($_SESSION['utilisateur'])) {
                 echo ' <li class="nav-item">';
-                echo  '<a class="nav-link" href="../template/connexion/login.php">deconnexion</a>';
+                echo  '<a class="nav-link" href="../connexion/login.php">deconnexion</a>';
                 echo '</li>';
             } ?>
         </ul>
