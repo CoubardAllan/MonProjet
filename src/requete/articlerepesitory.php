@@ -18,6 +18,11 @@ class articlerepesitory extends abstractrepository{
         $ajout = $this->connexion->prepare($this->requete);
         $ajout->execute([$data['titre'], $data['contenu'], $data['date_publication'], $data['categorie']]);
         $id = $this->connexion->lastInsertId();
+        $recup = 'SELECT * FROM articles WHERE id = ' . $id ;
+        $recuperation = $this->connexion->prepare($recup);
+        $recuperation->execute();
+        dd($recuperation);
+        $update = 'UPDATE articles SET WHERE id = ' . $id;
 
     }
 }
