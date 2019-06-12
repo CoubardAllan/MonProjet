@@ -9,15 +9,17 @@ require_once '../../src/requete/articlerepesitory.php';
 <?php require '../header.php'; ?>
 <body>
 <?php require '../include/ajoutUtilisateur.php'; ?>
-<div class="container">
+<div class="container connexion-container">
     <div class="row">
-        <div class="col-md-12">
-            <form method="post" action="">
-                <div class="form-group col-md-12 ">
-                    <input type="text" class="text" placeholder="ajout d'une categories" name="categorie" />
-                </div>
-                <div class="form-group col-md-12">
-                    <input type="submit" class="btn btn-primary" value="ajouter d'une categorie" />
+        <div class="col-md-4 connexion-form mx-auto">
+            <form method="post">
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <input type="text" class="form-control text" placeholder="Libellé" name="categorie" />
+                    </div>
+                    <div class="form-group col-md-12">
+                        <input type="submit" class="btn btn-primary" value="Sauvegarder" />
+                    </div>
                 </div>
             </form>
         </div>
