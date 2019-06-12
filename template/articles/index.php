@@ -11,7 +11,7 @@ $repository = new articlerepesitory();
     <?php require '../header.php'; ?>
 <body>
 <?php
-require '../include/nav-visiteur.php';
+require '../include/nav-article.php';
 ?>
 <div class="container">
     <div class="row">

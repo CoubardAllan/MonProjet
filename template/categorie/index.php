@@ -11,7 +11,7 @@ $categorieRepository = new categoriesRepository();
 <html>
     <?php require_once '../header.php'; ?>
 <body>
-<?php require '../include/nav-visiteur.php'; ?>
+<?php require '../include/nav-categorie.php'; ?>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -64,9 +64,20 @@ $categorieRepository = new categoriesRepository();
         <div class="col-md-8">
             <div class="row">
                 <?php foreach ($categorieRepository->findBy(['id' => $_GET['id']], 'id, nom', 'categories') as $item) : ?>
-                <div class="col-12 text-center">
-                    <h2><strong>Articles sur l'<?php echo $item->nom?></strong></h2>
-                </div>
+                    <div class="col-12 text-center">
+                        <h2>
+                            <strong>
+                                Articles sur
+                                <?php if (preg_match("/\A(a|e|h|i|o|u|y)/", $item->nom)) : ?>
+                                    l'
+                                <?php else : ?>
+                                    les
+                                <?php endif; ?>
+
+                                <?php echo $item->nom ?>
+                            </strong>
+                        </h2>
+                    </div>
                 <?php endforeach; ?>
                     <?php foreach ( $articleRepository->findBy(['category_id' => $_GET['id']],'*','articles') as $article) : ?>
                         <div class="col-6">
