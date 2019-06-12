@@ -12,8 +12,7 @@ if (!empty($_POST['titre']) && !empty($_POST['contenu']) && !empty($_POST['date_
         $test = new articlerepesitory();
         $test->ajoutArticle($_POST);
         $tmp_name = $_FILES['fichier']['tmp_name'];
-        if(move_uploaded_file($tmp_name, '../../image/'. $_FILES['fichier']['name'])){
-
+        if(move_uploaded_file($tmp_name, '../../image/'. $_POST['categorie'].'-'.$_POST['titre'] .'.jpg')){
         }
         echo 'ajout fait';
         }

@@ -20,9 +20,7 @@ class articlerepesitory extends abstractrepository{
         $id = $this->connexion->lastInsertId();
         $recup = 'SELECT * FROM articles WHERE id = ' . $id ;
         $recuperation = $this->connexion->prepare($recup);
-        $recuperation->execute();
-        dd($recuperation);
-        $update = 'UPDATE articles SET WHERE id = ' . $id;
+        $recupArticle = $recuperation->execute();
 
     }
 }
