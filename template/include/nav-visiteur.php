@@ -12,19 +12,19 @@
             ?>
             <?php foreach ($categorie->findAll() as $categories) : ?>
             <li class="nav-item">
-                <a class="nav-link" href="../categorie/index.php?id=<?php echo $categories->id ?>"><?php echo $categories->nom ?><span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="categorie/index.php?id=<?php echo $categories->id ?>"><?php echo $categories->nom ?><span class="sr-only">(current)</span></a>
             </li>
             <?php endforeach; ?>
             <?php
             if (!isset($_SESSION['utilisateur'])) {
                 echo ' <li class="nav-item">';
-                echo  '<a class="nav-link" href="../connexion/login.php">connexion</a>';
+                echo  '<a class="nav-link" href="connexion/login.php">connexion</a>';
                 echo '</li>';
             } ?>
             <?php
             if (isset($_SESSION['utilisateur'])) {
                 echo ' <li class="nav-item">';
-                echo  '<a class="nav-link" href="../connexion/login.php">deconnexion</a>';
+                echo  '<a class="nav-link" href="connexion/login.php">deconnexion</a>';
                 echo '</li>';
             } ?>
         </ul>
