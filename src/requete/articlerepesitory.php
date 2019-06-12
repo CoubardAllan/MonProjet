@@ -17,5 +17,7 @@ class articlerepesitory extends abstractrepository{
         $this->requete = 'INSERT INTO articles(titre , contenu , date_publication , category_id ) VALUES (?,?,?,?)';
         $ajout = $this->connexion->prepare($this->requete);
         $ajout->execute([$data['titre'], $data['contenu'], $data['date_publication'], $data['categorie']]);
+        $id = $this->connexion->lastInsertId();
+
     }
 }
