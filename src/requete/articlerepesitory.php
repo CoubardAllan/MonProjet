@@ -29,4 +29,10 @@ class articlerepesitory extends abstractrepository{
             $imageurl = $this->connexion->prepare($query)->execute();
         }
     }
+    public function Jointure(){
+        $query = 'SELECT * FROM articles a INNER JOIN categories c ON a.category_id = c.id';
+        $affichage = $this->connexion->prepare($query);
+        $affichage->execute();
+        return $affichage->fetchAll(\PDO::FETCH_CLASS);
+    }
 }

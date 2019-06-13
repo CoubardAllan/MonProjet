@@ -7,8 +7,12 @@ require "../../vendor/autoload.php";
 <?php
 require '../header.php';
 use App\authentification;
+use App\requete\articlerepesitory;
 $redacteur = new authentification();
 $redacteur->redacteur();
+
+$affichageArticle =  new articlerepesitory();
+$article = $affichageArticle->Jointure();
 ?>
 <body>
 <?php require '../include/nav-redacteur.php'; ?>
@@ -22,29 +26,18 @@ $redacteur->redacteur();
                     <th scope="col">titre</th>
                     <th scope="col">date de publication</th>
                     <th scope="col">categorie</th>
-                    <th scope="col">publié</th>
+                    <th scope="col">top article</th>
                 </tr>
                 </thead>
                 <tbody>
+                <?php foreach ($article as $articles) : ?>
                 <tr>
-                    <th scope="row">Napoleon</th>
-                    <td>test</td>
-                    <td>test</td>
-                    <td>test</td>
+                    <th scope="row"><?php echo $articles->titre ; ?></th>
+                    <td><?php echo $articles->date_publication ;?></td>
+                    <td><?php echo $articles->nom ;?></td>
+                    <td><?php if ($articles->is_top_article == 0 ) {echo 'non';}else{ echo 'oui';} ?></td>
                 </tr>
-                <tr>
-                    <th scope="row">test</th>
-                    <td>test</td>
-                    <td>test</td>
-                    <td>test</td>
-                </tr>
-                <tr>
-                    <th scope="row">test</th>
-                    <td>test</td>
-                    <td>test</td>
-                    <td>test</td>
-                </tr>
-                </tbody>
+                <?php endforeach; ?>
             </table>
             <form action="ajoutArticle.php">
                 <div class="form-group col-md-12 text-right">
