@@ -20,7 +20,13 @@ class articlerepesitory extends abstractrepository{
         $query = 'SELECT * FROM articles WHERE id = ' . $id ;
         $recuperation = $this->connexion->prepare($query);
         $recuperation->execute();
-
-        return $recuperation->fetch(\PDO::FETCH_OBJ);
+        $article = $recuperation->fetch(\PDO::FETCH_OBJ);
+        $tmp_name = $_FILES['fichier']['tmp_name'];
+        if(move_uploaded_file($tmp_name, '../../image/'. $article->id .'-article-image.jpg')){
+            // Mettre a jour l'url de la photo de l'article
+            // url = $article->id . '-article-image.jpg'
+            $query = 'UPDATE articles SET photo_url = "' . $article->id . '-article-image-jpg" WHERE id = '.$article->id;
+            $imageurl = $this->connexion->prepare($query)->execute();
+        }
     }
 }

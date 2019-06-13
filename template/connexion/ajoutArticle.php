@@ -11,14 +11,7 @@ if (!empty($_POST['titre']) && !empty($_POST['contenu']) && !empty($_POST['date_
     if(isset($_POST['submit'])){
         $articleRepository = new articlerepesitory();
         $article = $articleRepository->ajoutArticle($_POST);
-        $tmp_name = $_FILES['fichier']['tmp_name'];
-        if(move_uploaded_file($tmp_name, '../../image/'. $article->id .'-article-image.jpg')){
-            // Mettre a jour l'url de la photo de l'article
-            // url = $article->id . '-article-image.jpg'
-            $query = 'UPDATE articles SET photo_url ' . $article->id . '-article-image-jpg WHERE id = '.$article->id;
-            $imageurl = $this->connexion->prepare($query)->execute();
-        }
-        echo 'ajout fait';
+        header('location: redacteur.php');
     }
 }
 
