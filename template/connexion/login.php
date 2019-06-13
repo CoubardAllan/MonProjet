@@ -18,7 +18,7 @@ if ($_POST) {
     <div class="row">
         <div class="col-md-4 connexion-form mx-auto">
             <form method="post" action="login.php">
-                <div class="row">
+                <div class="row row-article">
                     <div class="form-group col-md-12">
                         <input type="text" class="form-control" placeholder="nom du compte" name="nom_compte" />
                     </div>

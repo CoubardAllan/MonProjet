@@ -81,7 +81,7 @@ img.napoleon {
 div.bouton-connexion{
     margin: 25px 0;
 }
-div.row-login{
+div.row-login div.row-article{
     box-shadow: 2px 2px #0b0b0b;
 }
 .login-container{
@@ -106,8 +106,7 @@ div.row-login{
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
     color:#fff;
-    margin-top: 5%;
-
+    margin: 5% 0;
 }
 .btnSubmit{
     width: 70%;
@@ -145,8 +144,5 @@ div.col-md-3{
     margin: 25px 0;
 }
 div.col-md-9{
-    margin: 25px 0;
-}
-div.container-ajoutArt{
     margin: 25px 0;
 }

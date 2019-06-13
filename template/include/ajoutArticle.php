@@ -12,13 +12,13 @@
                 <a class="nav-link" href="redacteur.php">Articles</a>
             </li>
             <?php
-            if (!isset($_SESSION['utilisateur'])) {
+            if (isset($_SESSION['utilisateur'])) {
                 echo ' <li class="nav-item">';
                 echo  '<a class="nav-link" href="../connexion/login.php">connexion</a>';
                 echo '</li>';
             } ?>
             <?php
-            if (isset($_SESSION['utilisateur'])) {
+            if (!isset($_SESSION['utilisateur'])) {
                 echo ' <li class="nav-item">';
                 echo  '<a class="nav-link" href="../connexion/login.php">deconnexion</a>';
                 echo '</li>';
