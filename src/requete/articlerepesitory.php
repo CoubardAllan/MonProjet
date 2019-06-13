@@ -13,9 +13,14 @@ class articlerepesitory extends abstractrepository{
     }
 
     public function ajoutArticle($data){
-        $test = $_POST['categorie'];
-        $this->requete = 'INSERT INTO articles(titre , contenu , date_publication , category_id ) VALUES (?,?,?,?)';
-        $ajout = $this->connexion->prepare($this->requete);
+        $query = 'INSERT INTO articles(titre , contenu , date_publication , category_id ) VALUES (?,?,?,?)';
+        $ajout = $this->connexion->prepare($query);
         $ajout->execute([$data['titre'], $data['contenu'], $data['date_publication'], $data['categorie']]);
+        $id = $this->connexion->lastInsertId();
+        $query = 'SELECT * FROM articles WHERE id = ' . $id ;
+        $recuperation = $this->connexion->prepare($query);
+        $recuperation->execute();
+
+        return $recuperation->fetch(\PDO::FETCH_OBJ);
     }
 }

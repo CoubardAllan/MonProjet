@@ -9,16 +9,16 @@ require_once '../../src/requete/articlerepesitory.php';
 
 if (!empty($_POST['titre']) && !empty($_POST['contenu']) && !empty($_POST['date_publication'])){
     if(isset($_POST['submit'])){
-        $test = new articlerepesitory();
-        $test->ajoutArticle($_POST);
-        $tmp_name = $_FILES['fichier']['tmp_name'];
-        if(move_uploaded_file($tmp_name, '../../image/'. $_FILES['fichier']['name'])){
+        $articleRepository = new articlerepesitory();
+        $article = $articleRepository->ajoutArticle($_POST);
 
+        $tmp_name = $_FILES['fichier']['tmp_name'];
+        if(move_uploaded_file($tmp_name, '../../image/'. $article->id .'-article-image.jpg')){
+            // Mettre a jour l'url de la photo de l'article
+            // url = $article->id . '-article-image.jpg'
         }
         echo 'ajout fait';
-        }
-}else{
-    echo 'champ nécessaire';
+    }
 }
 ?>
 

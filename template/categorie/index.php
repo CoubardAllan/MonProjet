@@ -1,17 +1,17 @@
 <?php
 require '../../vendor/autoload.php';
 use App\requete\articlerepesitory;
+use App\requete\categoriesRepository;
 require_once '../../src/requete/articlerepesitory.php';
 $articleRepository = new articlerepesitory();
-$categorieRepository = new \App\requete\categoriesRepository();
-$categorie = $categorieRepository->findBy(['id' => $_GET['id']], '*', 'categories');
-dump($categorie[0]->nom);
+$categorieRepository = new categoriesRepository();
 ?>
+
 <!DOCTYPE html>
 <html>
     <?php require_once '../header.php'; ?>
 <body>
-<?php require '../include/nav-visiteur.php'; ?>
+<?php require '../include/nav-categorie.php'; ?>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -54,7 +54,7 @@ dump($categorie[0]->nom);
                     </div>
                     <div class="texte-top-article">
                         <h5>
-                            <a href="../articles/index.php  "><?php echo substr($art->contenu,0,75); ?></a>
+                            <a href="../articles/index.php"><?php echo substr($art->contenu,0,75); ?></a>
                         </h5>
                     </div>
                     <div class="col-12 divider"></div>
@@ -63,13 +63,27 @@ dump($categorie[0]->nom);
         </div>
         <div class="col-md-8">
             <div class="row">
-                <div class="col-12 text-center">
-                    <h2><strong>Articles sur l'<?php echo $categorie[0]->nom ?></strong></h2>
-                </div>
+                <?php foreach ($categorieRepository->findBy(['id' => $_GET['id']], 'id, nom', 'categories') as $item) : ?>
+                    <div class="col-12 text-center">
+                        <h2>
+                            <strong>
+                                Articles sur
+                                <?php if (preg_match("/\A(a|e|h|i|o|u|y)/", $item->nom)) : ?>
+                                    l'
+                                <?php else : ?>
+                                    les
+                                <?php endif; ?>
+
+                                <?php echo $item->nom ?>
+                            </strong>
+                        </h2>
+                    </div>
+                <?php endforeach; ?>
                     <?php foreach ( $articleRepository->findBy(['category_id' => $_GET['id']],'*','articles') as $article) : ?>
                         <div class="col-6">
                             <div class="card">
                                 <img class="card-img-top" src="../../image/chelou.jpg" alt="Card image cap">
+
                                 <div class="card-body">
                                     <h5 class="card-title"><?php echo $article->titre ?></h5>
                                     <p class="card-text"><?php echo substr($article->contenu,0, 50); ?></p>
