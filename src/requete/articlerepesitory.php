@@ -13,9 +13,9 @@ class articlerepesitory extends abstractrepository{
     }
 
     public function ajoutArticle($data){
-        $query = 'INSERT INTO articles(titre , contenu , date_publication , category_id ) VALUES (?,?,?,?)';
+        $query = 'INSERT INTO articles(titre , contenu , date_publication , category_id , is_top_article ) VALUES (?,?,?,?,?)';
         $ajout = $this->connexion->prepare($query);
-        $ajout->execute([$data['titre'], $data['contenu'], $data['date_publication'], $data['categorie']]);
+        $ajout->execute([$data['titre'], $data['contenu'], $data['date_publication'], $data['categorie'], $data['toparticle']]);
         $id = $this->connexion->lastInsertId();
         $query = 'SELECT * FROM articles WHERE id = ' . $id ;
         $recuperation = $this->connexion->prepare($query);
@@ -25,10 +25,12 @@ class articlerepesitory extends abstractrepository{
         if(move_uploaded_file($tmp_name, '../../image/'. $article->id .'-article-image.jpg')){
             // Mettre a jour l'url de la photo de l'article
             // url = $article->id . '-article-image.jpg'
-            $query = 'UPDATE articles SET photo_url = "' . $article->id . '-article-image-jpg" WHERE id = '.$article->id;
+            $query = 'UPDATE articles SET photo_url = "' . $article->id . '-article-image.jpg" WHERE id = '.$article->id;
             $imageurl = $this->connexion->prepare($query)->execute();
         }
     }
+
+
     public function Jointure(){
         $query = 'SELECT * FROM articles a INNER JOIN categories c ON a.category_id = c.id';
         $affichage = $this->connexion->prepare($query);

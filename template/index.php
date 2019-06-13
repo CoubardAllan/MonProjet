@@ -54,10 +54,10 @@ if($session->existe('utilisateur') === true){
                 require_once '../src/requete/articlerepesitory.php';
                 $topArticle = new articlerepesitory();
                 ?>
-                <?php foreach ( array_slice($topArticle->findBy(['is_top_article' => 1], 'titre, contenu, id', 'articles'),0 , 3 ) as $topArticle) : ?>
+                <?php foreach ( array_slice($topArticle->findBy(['is_top_article' => 1], 'titre, contenu, id, photo_url', 'articles'),0 , 3 ) as $topArticle) : ?>
                     <div class="col-sm-4 d-flex pb-3">
                     <div class="card">
-                        <img class="card-img-top" src="../image/chemin.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="../../image/<?php echo $topArticle->photo_url ?>" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo substr($topArticle->titre,0, 50) ?></h5>
                             <a  class="btn btn-primary" href="articles/index.php?id=<?php echo $topArticle->id ?>" >aller vers l'article</a>
@@ -80,7 +80,7 @@ if($session->existe('utilisateur') === true){
                 <?php foreach ( $article->findAll() as $article) : ?>
                 <div class="col-sm-4 d-flex pb-3">
                     <div class="card ">
-                        <img class="card-img-top" src="../image/nuit.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="../image/<?php echo $article->photo_url ?>" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo substr($article->titre,0, 50) ?></h5>
                             <a class="btn btn-primary" href="articles/index.php?id=<?php echo $article->id ?>" >aller vers l'article</a>

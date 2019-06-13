@@ -17,12 +17,12 @@ require '../include/nav-article.php';
     <div class="row">
         <div class="col-md-9">
             <div class="article-histoire">
-                <?php foreach ($repository->findBy( ['id' => $_GET['id']], 'contenu, titre', 'articles') as $row) : ?>
+                <?php foreach ($repository->findBy( ['id' => $_GET['id']], 'contenu, titre, photo_url', 'articles') as $row) : ?>
                     <div class="col-12 text-center titre-article">
                         <p class="text"><strong><?php echo $row->titre ?></strong></p>
                     </div>
                     <div class="col-12">
-                        <img class="napoleon" src="/image/aurore.jpg" alt="">
+                        <img class="napoleon" src="../../image/<?php echo $row->photo_url ?>" alt="">
                     </div>
                     <div class="col-12">
                         <p class="text"><?php echo $row->contenu ?></p>

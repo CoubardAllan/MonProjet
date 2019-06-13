@@ -7,8 +7,6 @@
             <!-- Remplacer par une query qui va chercher toutes les categories en base de données -->
             <!-- Les categories ne doivent pas etre visible par l'administateur -->
             <li class="nav-item">
-                <a class="nav-link" href="../categorie/index.php">Categories</a>
-            </li><li class="nav-item">
                 <a class="nav-link" href="redacteur.php">Articles</a>
             </li>
             <?php

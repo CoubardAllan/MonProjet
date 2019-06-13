@@ -52,6 +52,10 @@ $categori = $category->findAll();
                         <div class="form-group col-md-12">
                             <input  type="text" class="date" placeholder="date AAAA/MM/JJ" name="date_publication">
                         </div>
+                        <div class="form-group col-md-12">
+                            <input type="checkbox" id="TopArticle" name="toparticle" value="1" checked>
+                            <label for="TopArticle">top article ?</label>
+                        </div>
                         <div class="col-md-12">
                             <input name="submit" type="submit" class="btn btn-primary" value="ajouter un article" >
                         </div>

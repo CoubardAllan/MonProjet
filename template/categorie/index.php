@@ -44,11 +44,11 @@ $categorieRepository = new categoriesRepository();
                 </div>
 
                 <div class="col-12 divider"></div>
-                <?php foreach ( $articleRepository->findBy(['is_top_article' => 1], 'titre, contenu, id','articles') as $art) : ?>
+                <?php foreach ( $articleRepository->findBy(['is_top_article' => 1], 'titre, contenu, id, photo_url','articles') as $art) : ?>
                     <div class="image-top-article">
                         <div class="box-widget">
                             <h6 class="widget-title">
-                                <a href="../index.php" ><img alt="" src="../../image/tele.jpg"></a>
+                                <a href="../index.php" ><img alt="" src="../../image/<?php echo $art->photo_url ;?>"></a>
                             </h6>
                         </div>
                     </div>
@@ -82,7 +82,7 @@ $categorieRepository = new categoriesRepository();
                     <?php foreach ( $articleRepository->findBy(['category_id' => $_GET['id']],'*','articles') as $article) : ?>
                         <div class="col-6">
                             <div class="card">
-                                <img class="card-img-top" src="../../image/chelou.jpg" alt="Card image cap">
+                                <img class="card-img-top" src="../../image/<?php echo $article->photo_url ;?>" alt="Card image cap">
 
                                 <div class="card-body">
                                     <h5 class="card-title"><?php echo $article->titre ?></h5>
